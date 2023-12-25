@@ -7,16 +7,16 @@ hamburgerMenu.addEventListener('click', () => {
 });
 
 //! CARDS
-document.querySelectorAll('.arrow').forEach(function(arrow) {
-  arrow.addEventListener('click', function() {
-    var descricao = this.parentNode.querySelector('.descricao');
-    if(descricao.style.display === 'block') {
-      descricao.style.display = 'none';
-    } else {
-      descricao.style.display = 'block';
-    }
-  });
-});
+// document.querySelectorAll('.arrow').forEach(function(arrow) {
+//   arrow.addEventListener('click', function() {
+//     var descricao = this.parentNode.querySelector('.descricao');
+//     if(descricao.style.display === 'block') {
+//       descricao.style.display = 'none';
+//     } else {
+//       descricao.style.display = 'block';
+//     }
+//   });
+// });
 
 //! arrow
 document.addEventListener('DOMContentLoaded', function() {
