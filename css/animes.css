@@ -52,7 +52,7 @@ h2, h3, p {
     box-sizing: border-box;
     margin-bottom: 20px;
 
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .card h2, p {
