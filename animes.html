@@ -61,6 +61,29 @@
 
     </main>
 
+    <!--! ------------------------------------------------------------------- -->
+
+    <style>
+        .descricao {
+          display: none; /* Inicia oculto por padrão */
+        }
+        .descricao.mostrar {
+          display: block; /* Mostra o elemento quando essa classe está presente */
+        }
+      </style>
+      
+      <script>
+        document.querySelectorAll('.arrow').forEach(function(arrow) {
+          arrow.addEventListener('click', function() {
+            var descricao = this.parentNode.querySelector('.descricao');
+            descricao.classList.toggle('mostrar');
+          });
+        });
+      </script>
+      
+
+    <!--! ------------------------------------------------------------------- -->
+
     <script src="./js/script.js"></script>
     
 </body>
