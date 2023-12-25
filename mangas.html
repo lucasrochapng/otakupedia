@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/mangas.css">
+    <!-- <link rel="stylesheet" href="./css/animes.css"> -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Otakupédia | Mangás</title>
 </head>
 <body>
@@ -33,6 +36,61 @@
         
 
     </header>
+
+    <main class="main">
+
+        <h1>Meus Mangás</h1>
+
+        <div class="card">
+
+            <img src="./img/manga-nanatsu.jpg" alt="imagem">
+            <h2>Nanatsu no Taizai</h2>
+            <h3>Capítulos: 346</h3>
+            <h3>Lançamento: 2012</h3>
+            <p class="descricao">
+                Os Sete Pecados Capitais, um grupo maligno de cavaleiros 
+                que conspiram para derrubar o reino de Britânia, 
+                supostamente foram erradicados pelos Cavaleiros Divinos, 
+                embora ainda existam rumores de que eles estão vivos. 
+                Dez anos depois, os Cavaleiros Divinos realizaram 
+                um golpe de estado e assassinaram o rei, se tornando 
+                os novos tiranos governantes do reino. Elizabeth, a 
+                única filha do rei, sai em uma jornada para encontrar 
+                os Sete Pecados Capitais, e recrutá-los para que possam 
+                ajudar a tomar o reino de volta.
+            </p>
+            <span class="arrow" id="arrowIcon">
+                <i class='bx bxs-chevron-down'></i>
+            </span>
+
+        </div>
+
+
+
+    </main>
+
+    <!--! ------------------------------------------------------------------- -->
+
+    <style>
+        .descricao {
+          display: none; /* Inicia oculto por padrão */
+        }
+        .descricao.mostrar {
+          display: block; /* Mostra o elemento quando essa classe está presente */
+        }
+      </style>
+      
+      <script>
+        document.querySelectorAll('.arrow').forEach(function(arrow) {
+          arrow.addEventListener('click', function() {
+            var descricao = this.parentNode.querySelector('.descricao');
+            descricao.classList.toggle('mostrar');
+          });
+        });
+      </script>
+      
+
+    <!--! ------------------------------------------------------------------- -->
 
     <script src="./js/script.js"></script>
     
