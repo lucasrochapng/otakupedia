@@ -13,14 +13,16 @@ body {
 
 h1 {
     font-size: 30px;
+    color: white;
 }
 
 h2 {
     font-size: 22px;
 }
 
-h1, h2, h3, p {
+h2, h3, p {
     color: white;
+    font-weight: normal;
 }
 
 .main {
@@ -43,19 +45,25 @@ h1, h2, h3, p {
     flex-direction: column;
     gap: 5px;
     width: 100%;
-    /* border: 1px solid #7a7a7a; */
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
     padding: 10px;
     position: relative;
     cursor: pointer;
     box-sizing: border-box;
     margin-bottom: 20px;
+
+    /* overflow: hidden; */
 }
 
+.card h2, p {
+    padding-top: 7px;
+}
 
 .card img {
     width: 100%;
-    height: auto;
+    height: 400px;
+    object-fit: cover;
+    /* height: auto; */
 }
 
 .card p {
@@ -64,8 +72,6 @@ h1, h2, h3, p {
 
 .arrow {
     position: relative;
-    /* bottom: 10px; */
-    /* right: 10px; */
     font-size: 20px;
     color: rgb(32, 136, 255);
     text-align: center;
