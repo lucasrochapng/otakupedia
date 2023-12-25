@@ -6,18 +6,6 @@ hamburgerMenu.addEventListener('click', () => {
   menuItems.classList.toggle('active');
 });
 
-//! CARDS
-// document.querySelectorAll('.arrow').forEach(function(arrow) {
-//   arrow.addEventListener('click', function() {
-//     var descricao = this.parentNode.querySelector('.descricao');
-//     if(descricao.style.display === 'block') {
-//       descricao.style.display = 'none';
-//     } else {
-//       descricao.style.display = 'block';
-//     }
-//   });
-// });
-
 //! arrow
 document.addEventListener('DOMContentLoaded', function() {
   const arrowIcons = document.querySelectorAll('.arrow');
@@ -35,5 +23,22 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+});
+
+//! quantia de animes/mangás
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = document.querySelectorAll('.card');
+  const quantiaElement = document.getElementById('quantia');
+
+  // Atualiza o valor inicial
+  quantiaElement.textContent = cards.length;
+
+  // Esta parte do código é opcional e atualizará dinamicamente caso haja alterações futuras na página
+  const observer = new MutationObserver(function() {
+    quantiaElement.textContent = document.querySelectorAll('.card').length;
+  });
+
+  // Observa mudanças no DOM e atualiza o valor quando houver alterações nas classes "card"
+  observer.observe(document.body, { subtree: true, childList: true });
 });
 
