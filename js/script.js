@@ -19,19 +19,37 @@ hamburgerMenu.addEventListener('click', () => {
 // });
 
 //! arrow
-document.addEventListener('DOMContentLoaded', function() {
-  const arrowIcon = document.getElementById('arrowIcon');
+// document.addEventListener('DOMContentLoaded', function() {
+//   const arrowIcon = document.getElementById('arrowIcon');
 
+//     arrowIcon.addEventListener('click', function() {
+//       const iconElement = arrowIcon.querySelector('i');
+
+//         if (iconElement.classList.contains('bxs-chevron-down')) {
+//           iconElement.classList.remove('bxs-chevron-down');
+//           iconElement.classList.add('bxs-chevron-up');
+//         } else {
+//           iconElement.classList.remove('bxs-chevron-up');
+//           iconElement.classList.add('bxs-chevron-down');
+//         }
+//     });
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const arrowIcons = document.querySelectorAll('.arrow');
+
+  arrowIcons.forEach(function(arrowIcon) {
     arrowIcon.addEventListener('click', function() {
       const iconElement = arrowIcon.querySelector('i');
 
-        if (iconElement.classList.contains('bxs-chevron-down')) {
-          iconElement.classList.remove('bxs-chevron-down');
-          iconElement.classList.add('bxs-chevron-up');
-        } else {
-          iconElement.classList.remove('bxs-chevron-up');
-          iconElement.classList.add('bxs-chevron-down');
-        }
+      if (iconElement.classList.contains('bxs-chevron-down')) {
+        iconElement.classList.remove('bxs-chevron-down');
+        iconElement.classList.add('bxs-chevron-up');
+      } else {
+        iconElement.classList.remove('bxs-chevron-up');
+        iconElement.classList.add('bxs-chevron-down');
+      }
     });
+  });
 });
 
