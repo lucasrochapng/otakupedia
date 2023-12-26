@@ -4,6 +4,14 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
   }
+
+.main {
+background-img: url('../img/giphy.gif');
+}
+
+.main img {
+    background-size: cover;
+}
   
   .main-header {
     background-color: #333;
