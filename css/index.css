@@ -5,19 +5,17 @@ body {
     font-family: Arial, sans-serif;
   }
 
-
-#body-index {
-  height: 90vh;
-}
-
 .gojo {
   background-color: #1f1f1f;
 }
 
 .gojo img {
-  width: 365px;
+  width: 100%;
+  /* width: 340px; */
+  /* height: 650px; */
   background-size: cover;
   background-position: center;
+  padding-top: 40px;
 }
   
   .main-header {
