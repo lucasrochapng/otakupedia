@@ -5,6 +5,11 @@ body {
     font-family: Arial, sans-serif;
   }
 
+
+#body-index {
+  height: 100vh;
+}
+
 .gojo {
   background-color: #1f1f1f;
   height: 90vh;
