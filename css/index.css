@@ -5,12 +5,16 @@ body {
     font-family: Arial, sans-serif;
   }
 
-.main {
-background-img: url('../img/giphy.gif');
+.gojo {
+  background-color: #1f1f1f;
+  height: 90vh;
 }
 
-.main img {
-    background-size: cover;
+.gojo img {
+  /* width: 100%; */
+  width: 340px;
+  background-size: cover;
+  background-position: center;
 }
   
   .main-header {
