@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -8,16 +15,13 @@ body {
 }
 
 .gojo {
-  background-color: #1f1f1f;
+  background-color: #000000;
 }
 
 .gojo img {
   width: 100%;
-  /* width: 340px; */
-  /* height: 650px; */
   background-size: cover;
   background-position: center;
-  /* padding-top: 0px; */
 }
   
   .main-header {
@@ -88,10 +92,6 @@ body {
     color: #fff;
     text-decoration: none;
   }
-  
-  /* .menu-items li a:hover {
-    color: rgb(32, 136, 255);
-  } */
 
   .menu-items li a.active {
     color: rgb(32, 136, 255);
@@ -114,6 +114,60 @@ body {
     transition: all 0.3s ease;
     margin: 2px 0;
   }
+
+  footer {
+    background: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+  }
+
+  .footer-logo h1 {
+    font-size: 30px;
+    color: rgb(32, 136, 255);
+    font-family: "Poppins", sans-serif;
+    
+  }
+
+  .footer-logo p {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    margin-top: -12px;
+  }
+
+  .barra {
+    width: 90%;
+    height: 2px;
+    background: rgb(56, 56, 56);
+    
+  }
+
+  .footer-redes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0 10px 0;
+  }
+
+  .footer-redes a i {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+  }
+
+
   
   @media (min-width: 768px) {
     .menu-items {
