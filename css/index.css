@@ -65,22 +65,9 @@ body {
     align-items: center;
     position: relative;
   }
-  
-  /* .menu-items {
-    list-style-type: none;
-    padding: 0;
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #333;
-    margin: 0;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  } */
 
   .menu-items {
+
     list-style-type: none;
     padding: 0;
     display: none;
@@ -97,14 +84,13 @@ body {
     z-index: 1000;
     text-align: end;
     padding-top: 60px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
 
     animation: slide 0.3s ease forwards;
 
     
   }
-
   
   .menu-items.active {
     display: block;
@@ -123,15 +109,6 @@ body {
     color: rgb(32, 136, 255);
     font-weight: bold;
   }
-  
-  /* .hamburger-menu {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 20px;
-    width: 25px;
-  } */
 
   .hamburger-menu {
     cursor: pointer;
@@ -140,10 +117,12 @@ body {
     justify-content: space-between;
     height: 20px;
     width: 25px;
-    position: fixed;
-    top: 23px;
-    right: 20px;
+    /* position: fixed; */
+    position: relative;
+    /* top: 23px;
+    right: 20px; */
     z-index: 1100;
+    
   }
   
   .line {
