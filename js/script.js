@@ -42,3 +42,23 @@ document.addEventListener('DOMContentLoaded', function() {
   observer.observe(document.body, { subtree: true, childList: true });
 });
 
+//! ordena os cards por ano
+// Obtém todos os elementos de cards
+const cardsContainer = document.querySelector('.cards');
+const cards = Array.from(cardsContainer.children);
+
+// Ordena os cards com base nos IDs que contêm anos
+cards.sort((a, b) => {
+  const yearA = parseInt(a.id);
+  const yearB = parseInt(b.id);
+    return yearA - yearB;
+});
+
+// Remove os cards existentes do DOM
+while (cardsContainer.firstChild) {
+    cardsContainer.removeChild(cardsContainer.firstChild);
+}
+
+// Adiciona os cards ordenados de volta ao DOM
+cards.forEach(card => cardsContainer.appendChild(card));
+
