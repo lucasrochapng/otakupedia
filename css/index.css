@@ -16,7 +16,8 @@ body {
 
 .gojo img {
   /* width: 100%; */
-  width: 340px;
+  background-color: #1f1f1f;
+  width: 100%;
   background-size: cover;
   background-position: center;
 }
