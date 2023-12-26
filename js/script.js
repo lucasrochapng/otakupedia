@@ -63,32 +63,41 @@ while (cardsContainer.firstChild) {
 cards.forEach(card => cardsContainer.appendChild(card));
 
 //! filtro de pesquisa
-// Seleciona o campo de entrada
+// var inputBuscar = document.getElementById('buscar');
+// inputBuscar.addEventListener('input', function() {
+
+//     var termoPesquisa = inputBuscar.value.toLowerCase();
+//     var cards = document.querySelectorAll('.cards .card');
+
+//     cards.forEach(function(card) {
+//         var h2Element = card.querySelector('h2');
+//         var nome = h2Element.textContent.toLowerCase();
+
+//         if (nome.includes(termoPesquisa)) {
+//             card.style.display = 'block';
+//         } else {
+//             card.style.display = 'none';
+//         }
+//     });
+// });
+
 var inputBuscar = document.getElementById('buscar');
 
-// Adiciona um ouvinte de evento para o evento 'input'
 inputBuscar.addEventListener('input', function() {
-    // Obtém o valor do campo de entrada em letras minúsculas
     var termoPesquisa = inputBuscar.value.toLowerCase();
-
-    // Seleciona todas as divs com a classe "card" dentro da div "cards"
     var cards = document.querySelectorAll('.cards .card');
 
-    // Itera sobre as divs selecionadas
     cards.forEach(function(card) {
-        // Seleciona o elemento h2 dentro da div atual
         var h2Element = card.querySelector('h2');
-
-        // Obtém o texto do elemento h2 (nome) em letras minúsculas
         var nome = h2Element.textContent.toLowerCase();
 
-        // Verifica se o nome contém o termo de pesquisa
         if (nome.includes(termoPesquisa)) {
-            // Se o nome do filme corresponder ao termo de pesquisa, mostra o card
-            card.style.display = 'block';
+            card.classList.remove('removed'); // Remove a classe de "removido"
         } else {
-            // Se não corresponder, oculta o card
-            card.style.display = 'none';
+            card.classList.add('removed'); // Adiciona a classe de "removido"
         }
     });
 });
+
+
+

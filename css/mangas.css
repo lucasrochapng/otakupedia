@@ -71,7 +71,7 @@ h2, h3, p {
 }
 
 .arrow {
-    position: relative;
+    /* position: absolute; */
     font-size: 20px;
     color: rgb(32, 136, 255);
     text-align: center;
@@ -98,4 +98,9 @@ i {
 
 #manga-incompleto {
     color: rgb(255, 217, 0);
+}
+
+/* Estilos para cards "removidos" */
+.card.removed {
+    display: none;
 }

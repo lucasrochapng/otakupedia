@@ -100,3 +100,8 @@ i {
 #anime-incompleto {
     color: rgb(255, 217, 0);
 }
+
+/* Estilos para cards "removidos" */
+.card.removed {
+    display: none;
+}
