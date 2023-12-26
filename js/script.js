@@ -6,6 +6,7 @@ hamburgerMenu.addEventListener('click', () => {
   menuItems.classList.toggle('active');
 });
 
+
 //! arrow
 document.addEventListener('DOMContentLoaded', function() {
   const arrowIcons = document.querySelectorAll('.arrow');

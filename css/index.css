@@ -98,8 +98,11 @@ body {
     text-align: end;
     padding-top: 60px;
     padding-right: 20px;
+    padding-left: 20px;
 
     animation: slide 0.3s ease forwards;
+
+    
   }
 
   
@@ -151,6 +154,19 @@ body {
     margin: 2px 0;
   }
 
+  .menu-items a i {
+    color: rgb(80, 80, 80);
+    font-size: 30px;
+  }
+
+  #sociais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
   @keyframes slide {
     from {
       transform: translateX(100%);   
@@ -160,60 +176,6 @@ body {
       transform: translateX(0);
     }
   }
-
-  footer {
-    background: #1f1f1f;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .footer-logo {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0 10px 0;
-  }
-
-  .footer-logo h1 {
-    font-size: 30px;
-    color: rgb(32, 136, 255);
-    font-family: "Poppins", sans-serif;
-    
-  }
-
-  .footer-logo p {
-    color: white;
-    font-family: "Poppins", sans-serif;
-    font-size: 15px;
-    margin-top: -12px;
-  }
-
-  .barra {
-    width: 90%;
-    height: 2px;
-    background: rgb(56, 56, 56);
-    
-  }
-
-  .footer-redes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 0 10px 0;
-  }
-
-  .footer-redes a i {
-    font-size: 30px;
-    color: rgb(255, 255, 255);
-  }
-
-
   
   @media (min-width: 768px) {
     .menu-items {
