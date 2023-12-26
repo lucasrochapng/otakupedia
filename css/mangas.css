@@ -95,3 +95,7 @@ h2, h3, p {
 i {
     font-size: 25px;
 }
+
+#manga-incompleto {
+    color: rgb(255, 217, 0);
+}
