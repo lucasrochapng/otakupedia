@@ -62,3 +62,33 @@ while (cardsContainer.firstChild) {
 // Adiciona os cards ordenados de volta ao DOM
 cards.forEach(card => cardsContainer.appendChild(card));
 
+//! filtro de pesquisa
+// Seleciona o campo de entrada
+var inputBuscar = document.getElementById('buscar');
+
+// Adiciona um ouvinte de evento para o evento 'input'
+inputBuscar.addEventListener('input', function() {
+    // Obtém o valor do campo de entrada em letras minúsculas
+    var termoPesquisa = inputBuscar.value.toLowerCase();
+
+    // Seleciona todas as divs com a classe "card" dentro da div "cards"
+    var cards = document.querySelectorAll('.cards .card');
+
+    // Itera sobre as divs selecionadas
+    cards.forEach(function(card) {
+        // Seleciona o elemento h2 dentro da div atual
+        var h2Element = card.querySelector('h2');
+
+        // Obtém o texto do elemento h2 (nome) em letras minúsculas
+        var nome = h2Element.textContent.toLowerCase();
+
+        // Verifica se o nome contém o termo de pesquisa
+        if (nome.includes(termoPesquisa)) {
+            // Se o nome do filme corresponder ao termo de pesquisa, mostra o card
+            card.style.display = 'block';
+        } else {
+            // Se não corresponder, oculta o card
+            card.style.display = 'none';
+        }
+    });
+});

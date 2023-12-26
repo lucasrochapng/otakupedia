@@ -34,6 +34,27 @@ body {
     font-weight: bold;
     font-family: "Poppins", sans-serif;
   }
+
+  .filtro-pesquisa input {
+    border-radius: 5px;
+    background: #494949;
+    height: 37px;
+    border: none;
+    outline: none;
+  }
+
+  input:focus {
+    border: 2px solid rgb(32, 136, 255) !important;
+  }
+
+  .filtro-pesquisa input::placeholder {
+    color: grey;
+  }
+
+  input {
+    color: grey;
+    padding-left: 10px;
+  }
   
   .navbar {
     display: flex;
