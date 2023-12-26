@@ -98,11 +98,10 @@ body {
     text-align: end;
     padding-top: 60px;
     padding-right: 20px;
+
+    animation: slide 0.3s ease forwards;
   }
 
-  .space-menu{
-    display: flex;
-  }
   
   .menu-items.active {
     display: block;
@@ -150,6 +149,16 @@ body {
     width: 100%;
     transition: all 0.3s ease;
     margin: 2px 0;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(100%);   
+    }
+    to {
+
+      transform: translateX(0);
+    }
   }
 
   footer {
