@@ -92,7 +92,7 @@ body {
     
   }
 
-menu-items:last-of-type {
+.menu-items:last-of-type {
   position: absolute;
   bottom: 0;
 }
