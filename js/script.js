@@ -100,5 +100,48 @@ inputBuscar.addEventListener('input', function() {
     });
 });
 
+//! atribuindo estrela as notas
+function atualizarEstrelaParaTodos() {
+  // Seleciona todos os elementos com a classe "ratings" dentro da div "cards"
+  var cards = document.querySelectorAll('.cards .ratings');
+
+  cards.forEach(function(card) {
+      var numero = card.querySelector("#number");
+      var valor = parseInt(numero.textContent);
+      var estrela = card.querySelector("#star");
+
+      if (valor === 0 || valor === 1) {
+          estrela.innerHTML = "<i class='bx bx-star'></i>";
+      } else if (valor === 2 || valor === 3) {
+          estrela.innerHTML = "<i class='bx bxs-star-half'></i>";
+      } else {
+          estrela.innerHTML = "<i class='bx bxs-star'></i>";
+      }
+  });
+}
+
+// Observador de mutações para monitorar mudanças nos "cards"
+var observer = new MutationObserver(function(mutationsList, observer) {
+  mutationsList.forEach(function(mutation) {
+      if (mutation.type === 'childList' && mutation.target.classList.contains('cards')) {
+          atualizarEstrelaParaTodos();
+      }
+  });
+});
+
+// Elemento alvo (div 'cards') a ser observado
+var targetNode = document.querySelector('.cards');
+
+// Configuração do observador para observar mudanças nos filhos do elemento alvo
+var config = { childList: true };
+
+// Inicia a observação no elemento alvo com a configuração especificada
+observer.observe(targetNode, config);
+
+// Chamada inicial para atualizar as estrelas baseadas nos valores iniciais
+atualizarEstrelaParaTodos();
+
+
+
 
 

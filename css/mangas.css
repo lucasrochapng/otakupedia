@@ -105,3 +105,32 @@ i {
     display: none;
 }
 
+/*! -------- notas ------- */
+.tittle-rating {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ratings {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ratings h2,
+.ratings i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ratings h2 {
+    font-size: 22px;
+}
+
+.ratings i {
+    font-size: 20px;
+}
+
+#star {
+    color: rgb(255, 223, 43);
+}
