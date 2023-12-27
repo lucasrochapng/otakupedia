@@ -86,10 +86,12 @@ body {
     padding-top: 60px;
     padding-right: 15px;
     padding-left: 15px;
-
     animation: slide 0.3s ease forwards;
+  }
 
-    
+  .menu-items div:last-of-type {
+    position: absolute;
+    bottom: 10px;
   }
   
   .menu-items.active {
