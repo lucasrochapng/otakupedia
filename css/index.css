@@ -91,11 +91,6 @@ body {
 
     
   }
-
-.menu-items:last-of-type {
-  position: absolute;
-  bottom: 0;
-}
   
   .menu-items.active {
     display: block;
@@ -148,7 +143,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding-top: 100px;
+    padding-top: 10px;
   }
 
   @keyframes slide {
