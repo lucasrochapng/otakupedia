@@ -134,8 +134,6 @@ i {
 
 /*! filtros */
 
-/*! filtros */
-
 .filtro-pesquisa {
     display: flex;
     align-items: center;
@@ -203,3 +201,49 @@ i {
     }
 
   }
+
+  /*! status */
+
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+
+  .status i {
+    font-size: 16px;
+    padding-top: 4px;
+    
+  }
+
+  .status p {
+    font-style: italic;
+  }
+
+/*! status */
+
+.trailer {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding-top: 10px;
+}
+
+.trailer i {
+    font-size: 16px;
+    padding-bottom: 1px;
+    color: rgb(32, 136, 255);
+}
+
+.trailer a {
+    font-style: italic;
+    color: rgb(32, 136, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.trailer a:hover{
+    text-decoration: underline;
+}

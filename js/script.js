@@ -328,3 +328,25 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicialmente, ordenar os cards por ano
   mostrarCardsOrdenados();
 });
+
+//! status do anime
+
+function atualizarStatus() {
+  const statusText = document.getElementById('status-text').textContent.trim().toLowerCase();
+  const statusIcon = document.getElementById('status-icon');
+
+  if (statusText === 'completo') {
+      statusIcon.style.color = 'rgb(17, 206, 17)';
+  } else if (statusText === 'lançando') {
+      statusIcon.style.color = 'orange';
+  } else {
+      statusIcon.style.color = 'red';
+  }
+}
+
+// Chamando a função quando há uma mudança no texto
+const inputStatusText = document.getElementById('status-text');
+inputStatusText.addEventListener('input', atualizarStatus);
+
+// Chamando a função ao iniciar a página para verificar o texto inicial
+atualizarStatus();
