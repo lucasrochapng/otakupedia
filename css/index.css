@@ -91,6 +91,11 @@ body {
 
     
   }
+
+menu-items:last-of-type {
+  position: absolute;
+  bottom: 0;
+}
   
   .menu-items.active {
     display: block;
