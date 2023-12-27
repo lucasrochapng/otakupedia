@@ -131,3 +131,75 @@ i {
 #star {
     color: rgb(255, 223, 43);
 }
+
+/*! filtros */
+
+/*! filtros */
+
+.filtro-pesquisa {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.escolher-filtro {
+    display: flex;
+    height: 37px;
+    color: rgb(107, 107, 107);
+}
+
+#filtro {
+    font-size: 30px;
+    padding-top: 4px;
+}
+
+#setaFiltro {
+    font-size: 12px;
+    padding-top: 12px;
+}
+
+.modal {
+    position: fixed;
+    top: 50px;
+    left: 133px;
+    background:#424242;
+    color: white;
+    padding: 7px 15px 2px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+
+    opacity: 0;
+    animation: openFiltro 0.3s ease forwards;
+
+
+    > div {
+        margin-bottom: 5px;
+    }
+}
+
+.bxs-calendar {
+    font-size: 17px;
+    padding-right: 10px;
+}
+
+.bxs-star {
+    font-size: 17px;
+    padding-right: 10px;
+}
+
+.filtro-selecionado {
+    color: rgb(32, 136, 255);
+}
+
+
+@keyframes openFiltro {
+    
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+  }
