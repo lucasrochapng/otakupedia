@@ -86,6 +86,7 @@ main {
   background: rgb(32, 136, 255);
   border-bottom-right-radius: 10px;
   color: white;
+  height: 100%;
 }
 
 .card-rank-position h2 {
