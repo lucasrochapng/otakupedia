@@ -104,7 +104,7 @@ observer.observe(targetNode, config);
 // Chamada inicial para atualizar as estrelas baseadas nos valores iniciais
 atualizarEstrelaParaTodos();
 
-//! ordena por ano ou por nota --------------------------------------------------------------------------
+//! ordena por ano ou por nota e controla o filtro --------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function() {
   const cardsContainer = document.querySelector('.cards');
@@ -161,7 +161,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const iconRating = document.createElement('i');
   iconRating.classList.add('bx', 'bxs-star');
 
-
   // Criando a janela modal
   const modal = document.createElement('div');
   modal.classList.add('modal');
@@ -178,9 +177,13 @@ document.addEventListener('DOMContentLoaded', function() {
     modal.style.display = 'none'; // Esconde a janela modal após selecionar uma opção
     limparSelecaoFiltros();
     opcaoAno.classList.add('filtro-selecionado');
+
+    // Restaura a classe do ícone do filtro ao selecionar uma opção na modal
+    filtroIcon.classList.remove('bxs-up-arrow');
+    filtroIcon.classList.add('bxs-filter');
+    escolherFiltro.style.backgroundColor = '';
   });
 
-  
   const opcaoRating = document.createElement('div');
   opcaoRating.classList.add('opcao-filtro');
   opcaoRating.appendChild(iconRating); // Adiciona o ícone ao lado da frase
@@ -191,8 +194,12 @@ document.addEventListener('DOMContentLoaded', function() {
     modal.style.display = 'none'; // Esconde a janela modal após selecionar uma opção
     limparSelecaoFiltros();
     opcaoRating.classList.add('filtro-selecionado');
-  });
 
+    // Restaura a classe do ícone do filtro ao selecionar uma opção na modal
+    filtroIcon.classList.remove('bxs-up-arrow');
+    filtroIcon.classList.add('bxs-filter');
+    escolherFiltro.style.backgroundColor = '';
+  });
 
   modal.appendChild(opcaoAno);
   modal.appendChild(opcaoRating);
@@ -200,40 +207,54 @@ document.addEventListener('DOMContentLoaded', function() {
   // Adicionando a janela modal ao final do body
   document.body.appendChild(modal);
 
+  // Selecionando a div escolher-filtro
+  const escolherFiltro = document.querySelector('.escolher-filtro');
+
   // Evento de clique no ícone de filtro
-  const filtroIcon = document.querySelector('.escolher-filtro i');
+  const filtroIcon = document.getElementById('setaFiltro');
   let modalVisivel = false; // Variável para controlar o estado da janela modal
 
   filtroIcon.addEventListener('click', () => {
-      modalVisivel = !modalVisivel; // Alterna o estado da janela modal
-      modal.style.display = modalVisivel ? 'block' : 'none'; // Exibe ou oculta a janela modal
+    modalVisivel = !modalVisivel; // Alterna o estado da janela modal
+    modal.style.display = modalVisivel ? 'block' : 'none'; // Exibe ou oculta a janela modal
+    
+    // Alterna a classe do ícone do filtro
+    filtroIcon.classList.toggle('bxs-filter');
+    filtroIcon.classList.toggle('bxs-up-arrow');
+
+    if (!modalVisivel) {
+      // Fecha a modal e restaura a classe do ícone quando se clica fora do filtro
+      modal.style.display = 'none';
+      filtroIcon.classList.remove('bxs-up-arrow');
+      filtroIcon.classList.add('bxs-filter');
+      escolherFiltro.style.backgroundColor = 'transparent'; // Remove o background de sombra
+    } else {
+      // Adiciona o background de sombra ao abrir a modal
+      escolherFiltro.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+    }
+  });
+
+  // Evento para fechar a modal se clicar fora dela
+  document.addEventListener('click', function(event) {
+    if (event.target !== modal && !modal.contains(event.target) && event.target !== filtroIcon) {
+      modal.style.display = 'none'; // Fecha a modal se o clique for fora dela
+      modalVisivel = false; // Atualiza o estado da modal
+      
+      // Restaura a classe do ícone quando se clica fora da modal
+      filtroIcon.classList.remove('bxs-up-arrow');
+      filtroIcon.classList.add('bxs-filter');
+      escolherFiltro.style.backgroundColor = 'transparent'; // Remove o background de sombra
+    }
   });
 
   // Inicialmente, ordenar os cards por ano
   mostrarCardsOrdenados();
 });
 
+
+
+
 //! status do anime ----------------------------------------------------------------------------------
-
-// function atualizarStatus() {
-//   const statusText = document.getElementById('status-text').textContent.trim().toLowerCase();
-//   const statusIcon = document.getElementById('status-icon');
-
-//   if (statusText === 'completo') {
-//       statusIcon.style.color = 'rgb(17, 206, 17)';
-//   } else if (statusText === 'lançando') {
-//       statusIcon.style.color = 'orange';
-//   } else {
-//       statusIcon.style.color = 'red';
-//   }
-// }
-
-// // Chamando a função quando há uma mudança no texto
-// const inputStatusText = document.getElementById('status-text');
-// inputStatusText.addEventListener('input', atualizarStatus);
-
-// // Chamando a função ao iniciar a página para verificar o texto inicial
-// atualizarStatus();
 
 function atualizarStatus() {
   const cards = document.querySelectorAll('.card'); // Selecionando todas as divs com a classe 'card'
@@ -255,5 +276,4 @@ function atualizarStatus() {
 //Chamando a função ao iniciar a página para verificar o texto inicial
 atualizarStatus();
 
-// Se necessário, adicione um listener para alterações no texto e chamar a função
-// quando o texto for alterado (como você fez com o evento 'input')
+
