@@ -69,7 +69,7 @@ body {
   .menu-items {
 
     list-style-type: none;
-    padding: 0;
+    /* padding: 0; */
     display: none;
     position: fixed;
     top: 0;
@@ -102,12 +102,17 @@ body {
     margin-bottom: 10px;
   }
   
-  .menu-items li a {
+  .menu-items li a ,
+  .menu-items li a i {
+    display: flex;
+    justify-content: start;
+    gap: 15px;
     color: #fff;
     text-decoration: none;
   }
 
-  .menu-items li a.active {
+  .menu-items li a.active,
+  .menu-items li a.active i {
     color: rgb(32, 136, 255);
     font-weight: bold;
   }
@@ -135,7 +140,7 @@ body {
     margin: 2px 0;
   }
 
-  .menu-items a i {
+  .menu-items div a i {
     color: rgb(80, 80, 80);
     font-size: 30px;
   }

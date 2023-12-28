@@ -51,8 +51,6 @@ h2, h3, p {
     cursor: pointer;
     box-sizing: border-box;
     margin-bottom: 20px;
-
-    /* overflow: hidden; */
 }
 
 .card h2, p {
@@ -61,8 +59,6 @@ h2, h3, p {
 
 .card img {
     width: 100%;
-    /* height: 400px; */
-    /* object-fit: cover; */
     height: auto;
 }
 
@@ -92,7 +88,7 @@ h2, h3, p {
     padding-bottom: 2px;
 }
 
-i {
+.arrow i {
     font-size: 25px;
 }
 
