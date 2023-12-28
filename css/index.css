@@ -21,81 +21,23 @@ main {
   gap: 5px;
 }
 
-
-
-.card-rank-gold {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: grey;
-  width: 95%;
-  height: 60px;
+#top {
+  color: white;
+  font-family: "Poppins", sans-serif;
   margin-top: 15px;
-  border-radius: 15px 2px 15px 2px;
-  font-family: "Poppins", sans-serif;
-  position: relative;
 }
 
-.card-rank-gold::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  bottom: -2px;
-  left: -2px;
-  z-index: -1;
-  border-radius: inherit;
-  background: linear-gradient(100deg, gold, rgb(255, 238, 141), gold, gold, rgb(255, 236, 130), rgb(255, 230, 91), gold, rgb(255, 224, 51), gold, rgb(255, 235, 121), gold);
-}
-
-.card-rank-silver {
+.card-rank {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: grey;
   width: 95%;
-  height: 60px;
-  margin-top: 10px;
+  height: 64px;
+  margin-top: 12px;
+  border: 2px solid rgb(32, 136, 255);
   border-radius: 15px 2px 15px 2px;
   font-family: "Poppins", sans-serif;
-  position: relative;
-}
-
-.card-rank-silver::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  bottom: -2px;
-  left: -2px;
-  z-index: -1;
-  border-radius: inherit;
-  background: linear-gradient(100deg, silver, white, silver, silver, white, white, silver, white, silver, white, silver);
-}
-
-.card-rank-bronze {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: grey;
-  width: 95%;
-  height: 60px;
-  margin-top: 10px;
-  border-radius: 15px 2px 15px 2px;
-  font-family: "Poppins", sans-serif;
-  position: relative;
-}
-
-.card-rank-bronze::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  bottom: -2px;
-  left: -2px;
-  z-index: -1;
-  border-radius: inherit;
-  background: linear-gradient(100deg, rgb(233, 66, 0), rgb(255, 125, 74), rgb(233, 66, 0), rgb(233, 66, 0), rgb(255, 125, 74), rgb(255, 125, 74), rgb(233, 66, 0), rgb(255, 125, 74), rgb(233, 66, 0), rgb(255, 125, 74), rgb(233, 66, 0));
 }
 
 .card-rank-img {
@@ -112,11 +54,20 @@ main {
 .card-rank-text {
   display: flex;
   flex-direction: column;
-  margin-left: -134px;
+  justify-content:left;
+  align-items: start;
+}
+
+#naruto {
+  margin-left: -112px;
 }
 
 #jujutsu {
-  margin-left: -125px;
+  margin-left: -105px;
+}
+
+#bleach {
+  margin-left: -112px;
 }
 
 .card-rank-text h2 {
@@ -131,48 +82,22 @@ main {
   margin-bottom: 4px;
 }
 
-.card-rank-position-gold {
-  background: linear-gradient(100deg, gold, rgb(255, 239, 147), gold);
+.card-rank-position {
+  background: rgb(32, 136, 255);
   border-bottom-right-radius: 13px;
   color: white;
 }
 
-.card-rank-position-gold h2 {
+.card-rank-position h2 {
   font-size: 40px;
   padding: 0 15px 0 15px;
 }
 
-.card-rank-position-gold h2 small {
-  font-size: 30px;
+#rank-position1 {
+  padding: 0 4px 0 4px;
 }
 
-.card-rank-position-silver {
-  background: linear-gradient(100deg, silver, rgb(224, 224, 224), silver);
-  border-bottom-right-radius: 13px;
-  color: white;
-}
-
-.card-rank-position-silver h2 {
-  font-size: 40px;
-  padding: 0 11px 0 11px;
-}
-
-.card-rank-position-silver h2 small {
-  font-size: 30px;
-}
-
-.card-rank-position-bronze {
-  background: linear-gradient(100deg, rgb(233, 66, 0), rgb(255, 167, 132), rgb(233, 66, 0));
-  border-bottom-right-radius: 13px;
-  color: white;
-}
-
-.card-rank-position-bronze h2 {
-  font-size: 40px;
-  padding: 0 11px 0 11px;
-}
-
-.card-rank-position-bronze h2 small {
+.card-rank-position h2 small {
   font-size: 30px;
 }
 
