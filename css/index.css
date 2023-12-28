@@ -91,7 +91,7 @@ body {
 
   .menu-items div:last-of-type {
     position: absolute;
-    bottom: 50px;
+    bottom: 65px;
   }
   
   .menu-items.active {
@@ -99,7 +99,11 @@ body {
   }
   
   .menu-items li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+  }
+
+  .menu-items li a i {
+    padding-top: 2px;
   }
   
   .menu-items li a ,
