@@ -269,13 +269,14 @@ h2, h3, p {
 
 .card img {
     max-height: 70px;
+    max-width: 40px;
     width: auto;
     height: auto;
     border-radius: 5px 0 0px 5px;
 }
 
 .card div h2 {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -332,7 +333,7 @@ h2, h3, p {
 .ratings {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 3px;
     /* margin-right: -10px; */
 }
 
@@ -347,7 +348,7 @@ h2, h3, p {
 }
 
 .ratings i {
-    font-size: 12px;
+    font-size: 10px;
     margin-bottom: 1px;
 }
 
