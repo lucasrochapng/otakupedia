@@ -268,8 +268,8 @@ h2, h3, p {
 }
 
 .card img {
-    max-height: 70px;
-    max-width: 40px;
+    max-height: 75px;
+    max-width: 45px;
     width: auto;
     height: auto;
     border-radius: 5px 0 0px 5px;
@@ -328,6 +328,7 @@ h2, h3, p {
     align-items: start;
     width: 300px;
     padding: 3px 3px;
+    /* padding: 3px 3px 0 3px; */
 }
 
 .ratings {
@@ -409,11 +410,13 @@ h2, h3, p {
 .status p {
     font-style: italic;
     font-size: 10px;
+    color: white;
 }
 
 p {
     font-size: 10px;
     text-align: justify;
+    color: rgb(207, 207, 207);
 }
 
 .trailer {
