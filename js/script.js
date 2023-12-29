@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
   iconAno.classList.add('bx', 'bxs-calendar');
 
   const iconRating = document.createElement('i');
-  iconRating.classList.add('bx', 'bxs-star');
+  iconRating.classList.add('bx', 'bxs-trophy');
 
   // Criando a janela modal
   const modal = document.createElement('div');

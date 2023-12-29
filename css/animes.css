@@ -12,7 +12,7 @@ body {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 20px;
     color: white;
 }
 
@@ -35,11 +35,11 @@ h2, h3, p {
 }
 
 .main h1 {
-    padding-bottom: 30px;
-    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-top: 0px;
 }
 
-.card {
+/* .card {
     background-color: #424242;
     border-radius: 4px;
     display: flex;
@@ -52,22 +52,22 @@ h2, h3, p {
     cursor: pointer;
     box-sizing: border-box;
     margin-bottom: 20px;
-}
+} */
 
-.card h2, p {
+/* .card h2, p {
     padding-top: 7px;
-}
+} */
 
-.card img {
+/* .card img {
     width: 100%;
     height: auto;
-}
+} */
 
-.card p {
+/* .card p {
     text-align: justify;
-}
+} */
 
-.arrow {
+/* .arrow {
     position: relative;
     font-size: 20px;
     color: rgb(32, 136, 255);
@@ -97,13 +97,13 @@ h2, h3, p {
     color: rgb(255, 217, 0);
 }
 
-/* Estilos para cards "removidos" */
+
 .card.removed {
     display: none;
-}
+} */
 
 /*! -------- notas ------- */
-.tittle-rating {
+/* .tittle-rating {
     display: flex;
     justify-content: space-between;
 }
@@ -130,7 +130,7 @@ h2, h3, p {
 
 #star {
     color: rgb(255, 223, 43);
-}
+} */
 
 /*! filtros */
 
@@ -183,7 +183,7 @@ h2, h3, p {
     padding-right: 10px;
 }
 
-.bxs-star {
+.bxs-trophy {
     font-size: 17px;
     padding-right: 10px;
 }
@@ -207,36 +207,223 @@ h2, h3, p {
 
   /*! status */
 
-  .status {
+  /* .status {
     display: flex;
     align-items: center;
     gap: 5px;
     padding-top: 10px;
     padding-bottom: 5px;
-  }
+  } */
 
-  .status i {
+  /* .status i {
     font-size: 16px;
     padding-top: 4px;
-    
-  }
+  } */
 
-  .status p {
+  /* .status p {
     font-style: italic;
-  }
+  } */
 
 /*! status */
+
+/* .trailer {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding-top: 10px;
+} */
+
+/* .trailer i {
+    font-size: 16px;
+    padding-bottom: 1px;
+    color: rgb(32, 136, 255);
+} */
+
+/* .trailer a {
+    font-style: italic;
+    color: rgb(32, 136, 255);
+    text-decoration: none;
+    font-weight: bold;
+} */
+
+/* .trailer a:hover{
+    text-decoration: underline;
+} */
+
+
+/*! tentando mudar layout */
+
+.card {
+    background-color: #424242;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* height: 70px; */
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    
+}
+
+.card img {
+    max-height: 70px;
+    width: auto;
+    height: auto;
+    border-radius: 5px 0 0px 5px;
+}
+
+.card div h2 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.principal {
+    display: flex;
+}
+
+.arrow {
+    position: relative;
+    font-size: 20px;
+    color: rgb(32, 136, 255);
+    text-align: center;
+}
+
+.descricao {
+    display: none;
+}
+
+.card.active.descricao {
+    display: block;
+}
+
+.quantias {
+    display: flex;
+    gap: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.arrow i{
+    font-size: 15px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.card.removed {
+    display: none;
+}
+
+
+
+/*? ---------- notas ---------- */
+
+.tittle-rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    width: 300px;
+    padding: 3px 3px;
+}
+
+.ratings {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* margin-right: -10px; */
+}
+
+.ratings h2,
+.ratings i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ratings h2 {
+    font-size: 14px;
+}
+
+.ratings i {
+    font-size: 12px;
+    margin-bottom: 1px;
+}
+
+#star {
+    color: rgb(255, 223, 43);
+}
+
+
+
+/*? --------------------------- */
+
+
+.conteudos {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+}
+
+.conteudos h3 {
+    font-size: 10px;
+    color: rgb(207, 207, 207);
+}
+
+.temps-arrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.temps-eps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    padding: 0px 0px 0px 3px;
+}
+
+
+/*? ------ status -------- */
+
+.descricao {
+    padding: 0 5px 5px 5px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.status i {
+    font-size: 8px;
+    padding-top: 0.5px;
+}
+
+.status p {
+    font-style: italic;
+    font-size: 10px;
+}
+
+p {
+    font-size: 10px;
+    text-align: justify;
+}
 
 .trailer {
     display: flex;
     align-items: center;
     gap: 3px;
-    padding-top: 10px;
+    padding-top: 3px;
 }
 
 .trailer i {
-    font-size: 16px;
-    padding-bottom: 1px;
+    font-size: 7px;
     color: rgb(32, 136, 255);
 }
 
@@ -245,8 +432,10 @@ h2, h3, p {
     color: rgb(32, 136, 255);
     text-decoration: none;
     font-weight: bold;
+    font-size: 10px;
 }
 
 .trailer a:hover{
     text-decoration: underline;
 }
+
