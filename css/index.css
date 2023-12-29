@@ -275,7 +275,7 @@ main {
       margin: 0 10px;
     }
   } */
-  
+/*   
   @media (min-width: 400px) {
     
     header {
@@ -283,6 +283,10 @@ main {
     }
 
     main {
+      display: none;
+    }
+
+    #script-input {
       display: none;
     }
 
@@ -294,11 +298,10 @@ main {
       padding: 20px;
     }
 
-    .error-message div i {
-      font-size: 100px;
-      color: #3f3f3f;
-      margin-left: -5px;
-      margin-bottom: 30px;
+    .error-message div img {
+      width: 300px;
+      opacity: 0.9;
+      animation: andando 8s infinite linear;
     }
 
     .error-message div h2 {
@@ -310,9 +313,17 @@ main {
 
     .error-message div p {
       font-size: 20px;
-      /* font-weight: bold; */
       color: #5f5f5f;
       text-align: justify;
     }
 
-  }
+    @keyframes andando {
+      0% {
+        transform:translateX(420px);
+      }
+      100% {
+        transform: translateX(-220px);
+      }
+    }
+
+  } */
