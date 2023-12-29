@@ -383,7 +383,7 @@ h2, h3, p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 3px;
+    gap: 2px;
     padding: 0px 0px 0px 3px;
 }
 
