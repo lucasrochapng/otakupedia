@@ -257,7 +257,7 @@ main {
     }
   }
   
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     .menu-items {
       position: static;
       display: flex;
@@ -274,5 +274,24 @@ main {
     .menu-items li {
       margin: 0 10px;
     }
-  }
+  } */
   
+  @media (min-width: 400px) {
+    
+    header {
+      display: none;
+    }
+
+    main {
+      display: none;
+    }
+
+    .error-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: justify;
+      padding: 20px;
+    }
+
+  }
