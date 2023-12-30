@@ -131,6 +131,18 @@ document.addEventListener('DOMContentLoaded', function() {
     atualizarCards();
   }
 
+  //!-----------------------------------------------------------------------------------
+  function ordenarPorNome() {
+    cards.sort((a, b) => {
+      const titleA = a.querySelector('h2').textContent.toLowerCase();
+      const titleB = b.querySelector('h2').textContent.toLowerCase();
+      return titleA.localeCompare(titleB);
+    });
+  
+    atualizarCards();
+  }
+  //!-----------------------------------------------------------------------------------
+
   function atualizarCards() {
     while (cardsContainer.firstChild) {
       cardsContainer.removeChild(cardsContainer.firstChild);
@@ -144,6 +156,8 @@ document.addEventListener('DOMContentLoaded', function() {
       ordenarPorAno();
     } else if (currentSorting === 'rating') {
       ordenarPorRating();
+    } else if (currentSorting === 'nome') {
+      ordenarPorNome();
     }
   }
 
@@ -160,6 +174,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const iconRating = document.createElement('i');
   iconRating.classList.add('bx', 'bxs-trophy');
+
+  const iconNome = document.createElement('i');
+  iconNome.classList.add('bx', 'bx-sort-a-z');
 
   // Criando a janela modal
   const modal = document.createElement('div');
@@ -201,8 +218,26 @@ document.addEventListener('DOMContentLoaded', function() {
     escolherFiltro.style.backgroundColor = '';
   });
 
+  const opcaoNome = document.createElement('div');
+  opcaoNome.classList.add('opcao-filtro');
+  opcaoNome.appendChild(iconNome); // Adiciona o ícone ao lado da frase
+  opcaoNome.innerHTML += 'ordem alfabética';
+  opcaoNome.addEventListener('click', () => {
+    currentSorting = 'nome';
+    mostrarCardsOrdenados();
+    modal.style.display = 'none'; // Esconde a janela modal após selecionar uma opção
+    limparSelecaoFiltros();
+    opcaoNome.classList.add('filtro-selecionado');
+
+    // Restaura a classe do ícone do filtro ao selecionar uma opção na modal
+    filtroIcon.classList.remove('bxs-up-arrow');
+    filtroIcon.classList.add('bxs-filter');
+    escolherFiltro.style.backgroundColor = '';
+  });
+
   modal.appendChild(opcaoAno);
   modal.appendChild(opcaoRating);
+  modal.appendChild(opcaoNome);
 
   // Adicionando a janela modal ao final do body
   document.body.appendChild(modal);

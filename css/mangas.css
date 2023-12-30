@@ -334,6 +334,11 @@ p {
     padding-right: 10px;
 }
 
+.bx-sort-a-z {
+    font-size: 17px;
+    padding-right: 10px;
+}
+
 .filtro-selecionado {
     color: rgb(32, 136, 255);
 }
