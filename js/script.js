@@ -277,3 +277,24 @@ function atualizarStatus() {
 atualizarStatus();
 
 
+//! tela de carregamento
+
+window.addEventListener('load', function() {
+  const telaCarregamento = document.getElementById('tela-carregamento');
+  telaCarregamento.style.display = 'none'; // Inicia a div de carregamento oculta
+
+  // Mostra a div de carregamento enquanto a página está carregando
+  document.onreadystatechange = function () {
+      if (document.readyState === 'loading') {
+          telaCarregamento.style.display = 'block';
+      } else {
+          telaCarregamento.style.display = 'none'; // Esconde a div de carregamento quando o carregamento terminar
+          // Aqui você pode adicionar qualquer outra lógica necessária após o carregamento da página
+      }
+  };
+});
+
+
+
+
+
