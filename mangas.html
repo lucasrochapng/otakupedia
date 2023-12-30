@@ -11,6 +11,67 @@
     <link rel="icon" type="image/png" href="./img/logo.png" sizes="190x190">
 
     <title>Otakupédia | Mangás</title>
+
+
+    <style>
+        .error-message {
+          display: none;
+          height: 100vh;
+          background: white;
+        }
+    
+        /* Aqui estão as regras de estilo que você deseja aplicar quando a largura for maior que 400px */
+        @media screen and (min-width: 400px) {
+          header {
+            display: none;
+          }
+    
+          main {
+            display: none;
+          }
+    
+          .error-message {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            padding: 400px 100px;
+          }
+    
+          .error-message div img {
+            width: 500px;
+            opacity: 0.9;
+            animation: andando 3s infinite linear;
+          }
+    
+          .error-message div h2 {
+            font-size: 60px;
+            font-weight: bold;
+            color: #3f3f3f;
+            margin-bottom: 20px;
+          }
+    
+          .error-message div p {
+            font-size: 40px;
+            color: #5f5f5f;
+            text-align: justify;
+          }
+    
+          @keyframes andando {
+            0% {
+              transform: translateX(800px);
+            }
+            100% {
+              transform: translateX(-400px);
+            }
+          }
+        }
+    </style>
+
+
+
+
+
 </head>
 <body>
 
@@ -675,6 +736,29 @@
         </div>
 
     </main>
+
+
+
+
+    <div class="error-message">
+        <div>
+            <img src="./img/gojo-correndo.gif" alt="imagem">
+            <h2>Não é possível acessar esse site</h2>
+            <p>Lamentamos, mas esse site não foi pensado e desenvolvido para desktop, abra o site em um navegador mobile.</p>
+        </div>
+    </div>
+
+    <script>
+        // Verifica se a largura da tela é maior que 400px
+        if (window.innerWidth > 400) {
+          // Seleciona o header e a main e oculta ambos
+          document.querySelector('header').style.display = 'none';
+          document.querySelector('main').style.display = 'none';
+    
+          // Mostra a div de erro
+          document.querySelector('.error-message').style.display = 'flex';
+        }
+    </script>
 
     <!--! ------------------------------------------------------------------- -->
 
