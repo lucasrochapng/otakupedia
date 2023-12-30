@@ -286,10 +286,6 @@ main {
       display: none;
     }
 
-    #script-input {
-      display: none;
-    }
-
     .error-message {
       display: flex;
       flex-direction: column;
