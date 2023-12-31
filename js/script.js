@@ -299,11 +299,19 @@ function atualizarStatus() {
       const statusIcon = card.querySelector('#status-icon');
 
       if (statusText === 'completo') {
-          statusIcon.style.color = 'rgb(17, 206, 17)';
-      } else if (statusText === 'lançando') {
-          statusIcon.style.color = 'orange';
-      } else {
-          statusIcon.style.color = 'red';
+        statusIcon.style.color = 'rgb(17, 206, 17)';
+      } 
+      else if (statusText === 'incompleto') {
+        statusIcon.style.color = 'orange';
+      } 
+      else if (statusText === 'cancelado') {
+        statusIcon.style.color = 'red';
+      } 
+      else if (statusText === 'interesse') {
+        statusIcon.style.color = 'rgb(32, 136, 255)';
+      }
+      else {
+        statusIcon.style.color = 'grey';
       }
   });
 }
