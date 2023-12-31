@@ -193,6 +193,16 @@ h2, h3, p {
     padding-right: 10px;
 }
 
+.bxs-heart {
+    font-size: 16px;
+    padding-right: 10px;
+}
+
+.bx-list-check {
+    font-size: 16px;
+    padding-right: 10px;
+}
+
 .filtro-selecionado {
     color: rgb(32, 136, 255);
 }

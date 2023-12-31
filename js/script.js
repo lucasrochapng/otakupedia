@@ -104,7 +104,7 @@ observer.observe(targetNode, config);
 // Chamada inicial para atualizar as estrelas baseadas nos valores iniciais
 atualizarEstrelaParaTodos();
 
-//! ordena por ano ou por nota e controla o filtro --------------------------------------------------------------------------
+//! ordenação dos cards --------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function() {
   const cardsContainer = document.querySelector('.cards');
@@ -131,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
     atualizarCards();
   }
 
-  //!-----------------------------------------------------------------------------------
   function ordenarPorNome() {
     cards.sort((a, b) => {
       const titleA = a.querySelector('h2').textContent.toLowerCase();
@@ -141,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
     atualizarCards();
   }
-  //!-----------------------------------------------------------------------------------
 
   function atualizarCards() {
     while (cardsContainer.firstChild) {
@@ -177,6 +175,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const iconNome = document.createElement('i');
   iconNome.classList.add('bx', 'bx-sort-a-z');
+
+  const iconInteresse = document.createElement('i');
+  iconInteresse.classList.add('bx', 'bxs-heart');
+
+  const iconAcompanhando = document.createElement('i');
+  iconAcompanhando.classList.add('bx', 'bx-list-check');
 
   // Criando a janela modal
   const modal = document.createElement('div');
@@ -235,9 +239,50 @@ document.addEventListener('DOMContentLoaded', function() {
     escolherFiltro.style.backgroundColor = '';
   });
 
+  const opcaoInteresse = document.createElement('div');
+  opcaoInteresse.classList.add('opcao-filtro');
+  opcaoInteresse.appendChild(iconInteresse);
+  opcaoInteresse.innerHTML += 'interesses';
+  opcaoInteresse.addEventListener('click', () => {
+    const interesseCards = cards.filter(card => {
+      const statusText = card.querySelector('#status-text').textContent;
+      return statusText === 'Interesse';
+    });
+
+    limparSelecaoFiltros();
+    opcaoInteresse.classList.add('filtro-selecionado');
+    atualizarCardsFiltrados(interesseCards);
+  });
+
+  const opcaoAcompanhando = document.createElement('div');
+  opcaoAcompanhando.classList.add('opcao-filtro');
+  opcaoAcompanhando.appendChild(iconAcompanhando);
+  opcaoAcompanhando.innerHTML += 'acompanhando';
+  opcaoAcompanhando.addEventListener('click', () => {
+      const acompanhandoCards = cards.filter(card => {
+          const statusText = card.querySelector('#status-text').textContent;
+          return statusText === 'Acompanhando';
+      });
+  
+      limparSelecaoFiltros();
+      opcaoAcompanhando.classList.add('filtro-selecionado');
+      atualizarCardsFiltrados(acompanhandoCards);
+  });
+
   modal.appendChild(opcaoAno);
   modal.appendChild(opcaoRating);
   modal.appendChild(opcaoNome);
+  modal.appendChild(opcaoInteresse);
+  modal.appendChild(opcaoAcompanhando);
+
+  // Função para atualizar os cards exibidos com base no filtro aplicado
+  function atualizarCardsFiltrados(filteredCards) {
+    while (cardsContainer.firstChild) {
+        cardsContainer.removeChild(cardsContainer.firstChild);
+    }
+  
+    filteredCards.forEach(card => cardsContainer.appendChild(card));
+  }
 
   // Adicionando a janela modal ao final do body
   document.body.appendChild(modal);
@@ -291,30 +336,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //! status do anime ----------------------------------------------------------------------------------
 
-// function atualizarStatus() {
-//   const cards = document.querySelectorAll('.card'); // Selecionando todas as divs com a classe 'card'
-
-//   cards.forEach(card => {
-//       const statusText = card.querySelector('#status-text').textContent.trim().toLowerCase();
-//       const statusIcon = card.querySelector('#status-icon');
-
-//       if (statusText === 'completo') {
-//         statusIcon.style.color = 'rgb(17, 206, 17)';
-//       } 
-//       else if (statusText === 'incompleto') {
-//         statusIcon.style.color = 'orange';
-//       } 
-//       else if (statusText === 'cancelado') {
-//         statusIcon.style.color = 'red';
-//       } 
-//       else if (statusText === 'interesse') {
-//         statusIcon.style.color = 'rgb(32, 136, 255)';
-//       }
-//       else {
-//         statusIcon.style.color = 'grey';
-//       }
-//   });
-// }
 function atualizarStatus() {
   const cards = document.querySelectorAll('.card'); // Selecionando todas as divs com a classe 'card'
 
@@ -348,9 +369,6 @@ function atualizarStatus() {
 
 //Chamando a função ao iniciar a página para verificar o texto inicial
 atualizarStatus();
-
-
-
 
 
 
