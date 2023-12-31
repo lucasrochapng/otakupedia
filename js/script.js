@@ -335,8 +335,11 @@ function atualizarStatus() {
       case 'interesse':
         statusIcon.style.color = 'rgb(32, 136, 255)';
         break;
-      default:
+      case 'acompanhando':
         statusIcon.style.color = 'grey';
+        break;
+      default:
+        statusIcon.style.color = 'black';
         break;
     }
   });
