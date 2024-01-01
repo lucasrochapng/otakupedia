@@ -249,9 +249,15 @@ document.addEventListener('DOMContentLoaded', function() {
       return statusText === 'Interesse';
     });
 
+    modal.style.display = 'none';
     limparSelecaoFiltros();
     opcaoInteresse.classList.add('filtro-selecionado');
     atualizarCardsFiltrados(interesseCards);
+
+    // Restaura a classe do ícone do filtro ao selecionar uma opção na modal
+    filtroIcon.classList.remove('bxs-up-arrow');
+    filtroIcon.classList.add('bxs-filter');
+    escolherFiltro.style.backgroundColor = '';
   });
 
   const opcaoAcompanhando = document.createElement('div');
@@ -264,9 +270,15 @@ document.addEventListener('DOMContentLoaded', function() {
           return statusText === 'Acompanhando';
       });
   
+      modal.style.display = 'none';
       limparSelecaoFiltros();
       opcaoAcompanhando.classList.add('filtro-selecionado');
       atualizarCardsFiltrados(acompanhandoCards);
+
+      // Restaura a classe do ícone do filtro ao selecionar uma opção na modal
+      filtroIcon.classList.remove('bxs-up-arrow');
+      filtroIcon.classList.add('bxs-filter');
+      escolherFiltro.style.backgroundColor = '';
   });
 
   modal.appendChild(opcaoAno);
