@@ -8,7 +8,7 @@ hamburgerMenu.addEventListener('click', () => {
 });
 
 
-//! arrow ------------------------------------------------------------------------------------
+//! arrow -----------------------------------------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
   const arrowIcons = document.querySelectorAll('.arrow');
 
@@ -27,24 +27,24 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-//! quantia de animes/mangás ----------------------------------------------------------------
-document.addEventListener('DOMContentLoaded', function() {
-  const cards = document.querySelectorAll('.card');
-  const quantiaElement = document.getElementById('quantia');
+// //! quantia de animes/mangás ----------------------------------------------------------------
+// document.addEventListener('DOMContentLoaded', function() {
+//   const cards = document.querySelectorAll('.card');
+//   const quantiaElement = document.getElementById('quantia');
 
-  // Atualiza o valor inicial
-  quantiaElement.textContent = cards.length;
+//   // Atualiza o valor inicial
+//   quantiaElement.textContent = cards.length;
 
-  // Esta parte do código é opcional e atualizará dinamicamente caso haja alterações futuras na página
-  const observer = new MutationObserver(function() {
-    quantiaElement.textContent = document.querySelectorAll('.card').length;
-  });
+//   // Esta parte do código é opcional e atualizará dinamicamente caso haja alterações futuras na página
+//   const observer = new MutationObserver(function() {
+//     quantiaElement.textContent = document.querySelectorAll('.card').length;
+//   });
 
-  // Observa mudanças no DOM e atualiza o valor quando houver alterações nas classes "card"
-  observer.observe(document.body, { subtree: true, childList: true });
-});
+//   // Observa mudanças no DOM e atualiza o valor quando houver alterações nas classes "card"
+//   observer.observe(document.body, { subtree: true, childList: true });
+// });
 
-//! filtro de pesquisa -------------------------------------------------------------------------
+//! filtro de pesquisa ----------------------------------------------------------------------------------------------
 var inputBuscar = document.getElementById('buscar');
 
 inputBuscar.addEventListener('input', function() {
@@ -63,7 +63,7 @@ inputBuscar.addEventListener('input', function() {
     });
 });
 
-//! atribuindo estrela as notas --------------------------------------------------------------------------
+//! atribuindo estrela as notas ------------------------------------------------------------------------------------
 function atualizarEstrelaParaTodos() {
   // Seleciona todos os elementos com a classe "ratings" dentro da div "cards"
   var cards = document.querySelectorAll('.cards .ratings');
@@ -104,7 +104,7 @@ observer.observe(targetNode, config);
 // Chamada inicial para atualizar as estrelas baseadas nos valores iniciais
 atualizarEstrelaParaTodos();
 
-//! ordenação dos cards --------------------------------------------------------------------------
+//! ordenação dos cards --------------------------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function() {
   const cardsContainer = document.querySelector('.cards');
@@ -176,11 +176,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const iconNome = document.createElement('i');
   iconNome.classList.add('bx', 'bx-sort-a-z');
 
-  const iconInteresse = document.createElement('i');
-  iconInteresse.classList.add('bx', 'bxs-heart');
+  // const iconInteresse = document.createElement('i');
+  // iconInteresse.classList.add('bx', 'bxs-heart');
 
-  const iconAcompanhando = document.createElement('i');
-  iconAcompanhando.classList.add('bx', 'bx-list-check');
+  // const iconAcompanhando = document.createElement('i');
+  // iconAcompanhando.classList.add('bx', 'bx-list-check');
 
   // Criando a janela modal
   const modal = document.createElement('div');
@@ -239,64 +239,64 @@ document.addEventListener('DOMContentLoaded', function() {
     escolherFiltro.style.backgroundColor = '';
   });
 
-  const opcaoInteresse = document.createElement('div');
-  opcaoInteresse.classList.add('opcao-filtro');
-  opcaoInteresse.appendChild(iconInteresse);
-  opcaoInteresse.innerHTML += 'interesses';
-  opcaoInteresse.addEventListener('click', () => {
-    const interesseCards = cards.filter(card => {
-      const statusText = card.querySelector('#status-text').textContent;
-      return statusText === 'Interesse';
-    });
+  // const opcaoInteresse = document.createElement('div');
+  // opcaoInteresse.classList.add('opcao-filtro');
+  // opcaoInteresse.appendChild(iconInteresse);
+  // opcaoInteresse.innerHTML += 'interesses';
+  // opcaoInteresse.addEventListener('click', () => {
+  //   const interesseCards = cards.filter(card => {
+  //     const statusText = card.querySelector('#status-text').textContent;
+  //     return statusText === 'Interesse';
+  //   });
 
-    modal.style.display = 'none';
-    limparSelecaoFiltros();
-    opcaoInteresse.classList.add('filtro-selecionado');
-    atualizarCardsFiltrados(interesseCards);
+  //   modal.style.display = 'none';
+  //   limparSelecaoFiltros();
+  //   opcaoInteresse.classList.add('filtro-selecionado');
+  //   atualizarCardsFiltrados(interesseCards);
 
-    // Restaura a classe do ícone do filtro ao selecionar uma opção na modal
-    filtroIcon.classList.remove('bxs-up-arrow');
-    filtroIcon.classList.add('bxs-filter');
-    escolherFiltro.style.backgroundColor = '';
-  });
+  //   // Restaura a classe do ícone do filtro ao selecionar uma opção na modal
+  //   filtroIcon.classList.remove('bxs-up-arrow');
+  //   filtroIcon.classList.add('bxs-filter');
+  //   escolherFiltro.style.backgroundColor = '';
+  // });
 
-  const opcaoAcompanhando = document.createElement('div');
-  opcaoAcompanhando.classList.add('opcao-filtro');
-  opcaoAcompanhando.appendChild(iconAcompanhando);
-  opcaoAcompanhando.innerHTML += 'acompanhando';
-  opcaoAcompanhando.addEventListener('click', () => {
-      const acompanhandoCards = cards.filter(card => {
-          const statusText = card.querySelector('#status-text').textContent;
-          return statusText === 'Acompanhando';
-      });
+  // const opcaoAcompanhando = document.createElement('div');
+  // opcaoAcompanhando.classList.add('opcao-filtro');
+  // opcaoAcompanhando.appendChild(iconAcompanhando);
+  // opcaoAcompanhando.innerHTML += 'acompanhando';
+  // opcaoAcompanhando.addEventListener('click', () => {
+  //     const acompanhandoCards = cards.filter(card => {
+  //         const statusText = card.querySelector('#status-text').textContent;
+  //         return statusText === 'Acompanhando';
+  //     });
   
-      modal.style.display = 'none';
-      limparSelecaoFiltros();
-      opcaoAcompanhando.classList.add('filtro-selecionado');
-      atualizarCardsFiltrados(acompanhandoCards);
+  //     modal.style.display = 'none';
+  //     limparSelecaoFiltros();
+  //     opcaoAcompanhando.classList.add('filtro-selecionado');
+  //     atualizarCardsFiltrados(acompanhandoCards);
 
-      // Restaura a classe do ícone do filtro ao selecionar uma opção na modal
-      filtroIcon.classList.remove('bxs-up-arrow');
-      filtroIcon.classList.add('bxs-filter');
-      escolherFiltro.style.backgroundColor = '';
-  });
+  //     // Restaura a classe do ícone do filtro ao selecionar uma opção na modal
+  //     filtroIcon.classList.remove('bxs-up-arrow');
+  //     filtroIcon.classList.add('bxs-filter');
+  //     escolherFiltro.style.backgroundColor = '';
+  // });
 
   opcaoAno.classList.add('filtro-selecionado'); //! se der b.o, remover essa linha
 
   modal.appendChild(opcaoAno);
   modal.appendChild(opcaoRating);
   modal.appendChild(opcaoNome);
-  modal.appendChild(opcaoInteresse);
-  modal.appendChild(opcaoAcompanhando);
+  // modal.appendChild(opcaoInteresse);
+  // modal.appendChild(opcaoAcompanhando);
 
   // Função para atualizar os cards exibidos com base no filtro aplicado
-  function atualizarCardsFiltrados(filteredCards) {
-    while (cardsContainer.firstChild) {
-        cardsContainer.removeChild(cardsContainer.firstChild);
-    }
+  // function atualizarCardsFiltrados(filteredCards) {
+  //   while (cardsContainer.firstChild) {
+  //       cardsContainer.removeChild(cardsContainer.firstChild);
+  //   }
   
-    filteredCards.forEach(card => cardsContainer.appendChild(card));
-  }
+  //   filteredCards.forEach(card => cardsContainer.appendChild(card));
+  // }
 
   // Adicionando a janela modal ao final do body
   document.body.appendChild(modal);
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-//! status do anime ----------------------------------------------------------------------------------
+//! definindo a cor do status do anime ----------------------------------------------------------------------------
 
 function atualizarStatus() {
   const cards = document.querySelectorAll('.card'); // Selecionando todas as divs com a classe 'card'
@@ -385,6 +385,162 @@ function atualizarStatus() {
 atualizarStatus();
 
 
+//! mostrando card por status ---------------------------------------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', function() {
+  const cardsContainer = document.querySelector('.cards');
+  const cards = Array.from(cardsContainer.children);
+
+  function mostrarCardsFiltrados(status) {
+      cards.forEach(card => {
+          const statusText = card.querySelector('.descricao #status-text').textContent.trim().toLowerCase();
+          const arrow = card.querySelector('.arrow'); // Seleciona a seta do card
+
+          if (status === 'todos' || statusText === status.toLowerCase()) {
+              card.style.display = 'block';
+              arrow.style.display = 'block'; // Exibe a seta se o card estiver visível
+          } else {
+              card.style.display = 'none';
+              arrow.style.display = 'none'; // Oculta a seta se o card estiver oculto
+          }
+      });
+  }
+
+  const statusItems = document.querySelectorAll('.lista-status li');
+
+  statusItems.forEach(item => {
+      item.addEventListener('click', function() {
+          const status = this.textContent.toLowerCase();
+          mostrarCardsFiltrados(status);
+      });
+  });
+
+  mostrarCardsFiltrados('todos');
+});
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   const cardsContainer = document.querySelector('.cards');
+//   const cards = Array.from(cardsContainer.children);
+//   const statusItems = document.querySelectorAll('.lista-status li');
+
+//   function mostrarCardsFiltrados(status) {
+//     cards.forEach(card => {
+//       const statusText = card.querySelector('.descricao #status-text').textContent.trim().toLowerCase();
+//       const arrow = card.querySelector('.arrow'); // Seleciona a seta do card
+
+//       if (status === 'todos' || statusText === status.toLowerCase()) {
+//         card.style.display = 'block';
+//         arrow.style.display = 'block'; // Exibe a seta se o card estiver visível
+//       } else {
+//         card.style.display = 'none';
+//         arrow.style.display = 'none'; // Oculta a seta se o card estiver oculto
+//       }
+//     });
+//   }
+
+//   statusItems.forEach(item => {
+//     item.addEventListener('click', function() {
+//       statusItems.forEach(item => {
+//         item.classList.remove('selecionado'); // Remove a classe de destaque de todas as lis
+//       });
+
+//       this.classList.add('selecionado'); // Adiciona a classe de destaque na li clicada
+//       const status = this.textContent.toLowerCase();
+//       mostrarCardsFiltrados(status);
+//     });
+//   });
+
+//   // Marca 'todos' como inicialmente selecionado (azul)
+//   document.getElementById('status-todos').classList.add('selecionado');
+//   mostrarCardsFiltrados('todos');
+// });
 
 
+//! atualizando a quantia de animes sendo exibidas ---------------------------------------------------------------
 
+document.addEventListener('DOMContentLoaded', function() {
+  const cardsContainer = document.querySelector('.cards');
+  const cards = Array.from(cardsContainer.children);
+  const quantiaElement = document.getElementById('quantia');
+
+  function countVisibleCards() {
+    let count = 0;
+
+    cards.forEach(card => {
+      const style = getComputedStyle(card);
+      if (style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0') {
+        count++;
+      }
+    });
+
+    return count;
+  }
+
+  function updateVisibleCardCount() {
+    const visibleCount = countVisibleCards();
+    quantiaElement.textContent = visibleCount;
+  }
+
+  // Atualiza a quantidade de cards visíveis inicialmente
+  updateVisibleCardCount();
+
+  const statusItems = document.querySelectorAll('.lista-status li');
+
+  statusItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const status = this.textContent.toLowerCase();
+
+      cards.forEach(card => {
+        const statusText = card.querySelector('.descricao #status-text').textContent.trim().toLowerCase();
+        const arrow = card.querySelector('.arrow');
+
+        if (status === 'todos' || statusText === status) {
+          card.style.display = 'block';
+          arrow.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+          arrow.style.display = 'none';
+        }
+      });
+
+      updateVisibleCardCount(); // Atualiza a quantidade de cards visíveis após a filtragem
+    });
+  });
+
+  // Ao iniciar, mostra todos os cards e atualiza a quantidade inicial
+  cards.forEach(card => {
+    card.style.display = 'block';
+    const arrow = card.querySelector('.arrow');
+    arrow.style.display = 'block';
+  });
+});
+
+
+//! controla a linha de seleção dos cards -----------------------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', function() {
+  const statusItems = document.querySelectorAll('.lista-status li');
+  const linhaSelecionada = document.querySelector('.linha-selecionada');
+
+  statusItems.forEach(item => {
+    item.addEventListener('click', function() {
+      statusItems.forEach(item => {
+        item.classList.remove('selecionado');
+      });
+
+      this.classList.add('selecionado');
+      const width = this.clientWidth;
+      const left = this.offsetLeft;
+      
+      linhaSelecionada.style.width = `${width}px`;
+      linhaSelecionada.style.left = `${left}px`;
+    });
+  });
+
+  // Posiciona a linha na li 'todos' inicialmente
+  const todos = document.getElementById('status-todos');
+  const initialWidth = todos.clientWidth;
+  const initialLeft = todos.offsetLeft;
+  linhaSelecionada.style.width = `${initialWidth}px`;
+  linhaSelecionada.style.left = `${initialLeft}px`;
+});

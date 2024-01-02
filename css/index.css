@@ -262,6 +262,7 @@ main {
   overflow-x: auto; /* permite a rolagem horizontal quando necessário */
   white-space: nowrap; /* impede que os itens quebrem para outra linha */
   background-color: #333;
+  position: relative;
 }
 
 .lista-container::-webkit-scrollbar {
@@ -271,11 +272,21 @@ main {
 .lista-status {
   list-style-type: none;
   padding: 10px 5px;
-  color: white;
 }
 
 .lista-status li {
   display: inline-block;
   margin-right: 5px;
   margin-left: 5px;
+  color: white;
+  position: relative;
 }
+
+.linha-selecionada {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background-color: white;
+  transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
