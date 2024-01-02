@@ -272,7 +272,6 @@ main {
 
 .lista-status {
   list-style-type: none;
-  /* padding: 10px 5px; */
 }
 
 .lista-status li {
@@ -282,6 +281,11 @@ main {
   color: white;
   position: relative;
 }
+
+.lista-status li:last-child {
+  margin-right: 15px; /* Ajuste o valor conforme necessário */
+}
+
 
 .linha-selecionada {
   position: absolute;
