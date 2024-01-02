@@ -289,7 +289,8 @@ p {
 .escolher-filtro {
     display: flex;
     height: 37px;
-    color: rgb(107, 107, 107);
+    /* color: rgb(107, 107, 107); */
+    color: rgb(32, 136, 255);
     border-radius: 4px;
     padding-left: 1px;
     padding-right: 5px;
