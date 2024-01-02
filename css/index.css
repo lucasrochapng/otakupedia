@@ -259,7 +259,7 @@ main {
   }
   
 .lista-container {
-  width: 399px; /* largura desejada da tela */
+  width: 100%; /* largura desejada da tela */
   overflow-x: auto; /* permite a rolagem horizontal quando necessário */
   white-space: nowrap; /* impede que os itens quebrem para outra linha */
   background-color: #333;
