@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
   opcaoAno.classList.add('opcao-filtro');
   opcaoAno.appendChild(iconAno); // Adiciona o ícone ao lado da frase
   opcaoAno.innerHTML += 'mais antigo';
-  opcaoAno.classList.add('filtro-selecionado'); //! se der erro no filtro, remover essa linha
+  //opcaoAno.classList.add('filtro-selecionado'); //! se der erro no filtro, remover essa linha
   opcaoAno.addEventListener('click', () => {
     currentSorting = 'ano';
     mostrarCardsOrdenados();
@@ -280,6 +280,8 @@ document.addEventListener('DOMContentLoaded', function() {
       filtroIcon.classList.add('bxs-filter');
       escolherFiltro.style.backgroundColor = '';
   });
+
+  opcaoAno.classList.add('filtro-selecionado'); //! se der b.o, remover essa linha
 
   modal.appendChild(opcaoAno);
   modal.appendChild(opcaoRating);
