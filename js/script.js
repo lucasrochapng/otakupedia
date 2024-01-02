@@ -45,23 +45,55 @@ document.addEventListener('DOMContentLoaded', function() {
 // });
 
 //! filtro de pesquisa ----------------------------------------------------------------------------------------------
-var inputBuscar = document.getElementById('buscar');
+// var inputBuscar = document.getElementById('buscar');
 
-inputBuscar.addEventListener('input', function() {
-    var termoPesquisa = inputBuscar.value.toLowerCase();
-    var cards = document.querySelectorAll('.cards .card');
+// inputBuscar.addEventListener('input', function() {
+//     var termoPesquisa = inputBuscar.value.toLowerCase();
+//     var cards = document.querySelectorAll('.cards .card');
 
-    cards.forEach(function(card) {
-        var h2Element = card.querySelector('h2');
-        var nome = h2Element.textContent.toLowerCase();
+//     cards.forEach(function(card) {
+//         var h2Element = card.querySelector('h2');
+//         var nome = h2Element.textContent.toLowerCase();
 
-        if (nome.includes(termoPesquisa)) {
-            card.classList.remove('removed'); // Remove a classe de "removido"
-        } else {
-            card.classList.add('removed'); // Adiciona a classe de "removido"
-        }
-    });
-});
+//         if (nome.includes(termoPesquisa)) {
+//             card.classList.remove('removed'); // Remove a classe de "removido"
+//         } else {
+//             card.classList.add('removed'); // Adiciona a classe de "removido"
+//         }
+//     });
+// });
+//!---
+
+
+// var inputBuscar = document.getElementById('buscar');
+
+// inputBuscar.addEventListener('input', function() {
+//     var termoPesquisa = inputBuscar.value.toLowerCase().trim();
+//     var cardsContainer = document.querySelector('.cards');
+//     var cards = cardsContainer.querySelectorAll('.card');
+
+//     cards.forEach(function(card) {
+//         var h2Element = card.querySelector('h2');
+//         var nome = h2Element.textContent.toLowerCase();
+
+//         if (termoPesquisa === '') {
+//           card.style.display = 'block';
+//         }
+//         else if (nome.includes(termoPesquisa) || termoPesquisa === '' && card.style.display === 'block') {
+//             card.style.display = 'block'; // Mostra o card se corresponder ao termo de pesquisa
+            
+//         } 
+//         else {
+//             card.style.display = 'none'; // Oculta o card se não corresponder ao termo de pesquisa
+//         }
+//     });
+// });
+
+
+
+
+
+
 
 //! atribuindo estrela as notas ------------------------------------------------------------------------------------
 function atualizarEstrelaParaTodos() {
@@ -387,73 +419,88 @@ atualizarStatus();
 
 //! mostrando card por status ---------------------------------------------------------------------------------------
 
-document.addEventListener('DOMContentLoaded', function() {
-  const cardsContainer = document.querySelector('.cards');
-  const cards = Array.from(cardsContainer.children);
-
-  function mostrarCardsFiltrados(status) {
-      cards.forEach(card => {
-          const statusText = card.querySelector('.descricao #status-text').textContent.trim().toLowerCase();
-          const arrow = card.querySelector('.arrow'); // Seleciona a seta do card
-
-          if (status === 'todos' || statusText === status.toLowerCase()) {
-              card.style.display = 'block';
-              arrow.style.display = 'block'; // Exibe a seta se o card estiver visível
-          } else {
-              card.style.display = 'none';
-              arrow.style.display = 'none'; // Oculta a seta se o card estiver oculto
-          }
-      });
-  }
-
-  const statusItems = document.querySelectorAll('.lista-status li');
-
-  statusItems.forEach(item => {
-      item.addEventListener('click', function() {
-          const status = this.textContent.toLowerCase();
-          mostrarCardsFiltrados(status);
-      });
-  });
-
-  mostrarCardsFiltrados('todos');
-});
 
 // document.addEventListener('DOMContentLoaded', function() {
 //   const cardsContainer = document.querySelector('.cards');
 //   const cards = Array.from(cardsContainer.children);
-//   const statusItems = document.querySelectorAll('.lista-status li');
 
 //   function mostrarCardsFiltrados(status) {
-//     cards.forEach(card => {
-//       const statusText = card.querySelector('.descricao #status-text').textContent.trim().toLowerCase();
-//       const arrow = card.querySelector('.arrow'); // Seleciona a seta do card
+//       cards.forEach(card => {
+//           const statusText = card.querySelector('.descricao #status-text').textContent.trim().toLowerCase();
+//           // const arrow = card.querySelector('.arrow'); // Seleciona a seta do card
 
-//       if (status === 'todos' || statusText === status.toLowerCase()) {
-//         card.style.display = 'block';
-//         arrow.style.display = 'block'; // Exibe a seta se o card estiver visível
-//       } else {
-//         card.style.display = 'none';
-//         arrow.style.display = 'none'; // Oculta a seta se o card estiver oculto
-//       }
-//     });
+//           if (status === 'todos' || statusText === status.toLowerCase()) {
+//               // card.style.display = 'block';
+//               card.classList.remove('.removed');
+//               // arrow.style.display = 'block'; // Exibe a seta se o card estiver visível
+//           } else {
+//               // card.style.display = 'none';
+//               card.classList.add('.removed');
+//               // arrow.style.display = 'none'; // Oculta a seta se o card estiver oculto
+//           }
+//       });
 //   }
 
-//   statusItems.forEach(item => {
-//     item.addEventListener('click', function() {
-//       statusItems.forEach(item => {
-//         item.classList.remove('selecionado'); // Remove a classe de destaque de todas as lis
-//       });
+//   const statusItems = document.querySelectorAll('.lista-status li');
 
-//       this.classList.add('selecionado'); // Adiciona a classe de destaque na li clicada
-//       const status = this.textContent.toLowerCase();
-//       mostrarCardsFiltrados(status);
-//     });
+//   statusItems.forEach(item => {
+//       item.addEventListener('click', function() {
+//           const status = this.textContent.toLowerCase();
+//           mostrarCardsFiltrados(status);
+//       });
 //   });
 
-//   // Marca 'todos' como inicialmente selecionado (azul)
-//   document.getElementById('status-todos').classList.add('selecionado');
 //   mostrarCardsFiltrados('todos');
 // });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const cardsContainer = document.querySelector('.cards');
+  const cards = Array.from(cardsContainer.children);
+  const inputBuscar = document.getElementById('buscar');
+  const statusItems = document.querySelectorAll('.lista-status li');
+
+  function mostrarCardsFiltrados() {
+    cards.forEach(card => {
+      const statusText = card.querySelector('.descricao #status-text').textContent.trim().toLowerCase();
+      const h2Element = card.querySelector('h2');
+      const nome = h2Element.textContent.toLowerCase();
+      const termoPesquisa = inputBuscar.value.toLowerCase().trim();
+      const status = getStatusSelecionado();
+
+      const statusMatch = status === 'todos' || statusText === status.toLowerCase();
+      const termoMatch = termoPesquisa === '' || nome.includes(termoPesquisa);
+
+      if (statusMatch && termoMatch) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  statusItems.forEach(item => {
+    item.addEventListener('click', function() {
+      mostrarCardsFiltrados();
+    });
+  });
+
+  inputBuscar.addEventListener('input', function() {
+    mostrarCardsFiltrados();
+  });
+
+  function getStatusSelecionado() {
+    let statusSelecionado = 'todos';
+    statusItems.forEach(item => {
+      if (item.classList.contains('selecionado')) {
+        statusSelecionado = item.textContent.toLowerCase();
+      }
+    });
+    return statusSelecionado;
+  }
+
+  mostrarCardsFiltrados(); // Mostrar todos os cards ao carregar a página
+});
+
 
 
 //! atualizando a quantia de animes sendo exibidas ---------------------------------------------------------------
