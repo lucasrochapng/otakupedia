@@ -17,16 +17,21 @@ body {
 }
   
 .chat-box {
-    height: 84vh;
+    /* height: 84vh; */
+    height: 81vh;
     overflow-y: scroll;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    padding-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    padding-top: 120px;
+    margin-top: 10px;
+    /* padding-top: 120px; */
+    /* background-color: red; */
+    position: relative;
 }
 
 .header {
-    background-color: #333;
+    /* background-color: #333; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,7 +40,9 @@ body {
     height: 8vh;
     box-shadow: 0 1px 15px 0 #242424;
     /* position: absolute; */
-    position: fixed;
+    /* position: fixed; */
+    position: relative;
+    top: 0;
     z-index: 1;
 }
 

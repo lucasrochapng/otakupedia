@@ -29,4 +29,12 @@ function sendMessage() {
     return hours + ':' + minutes;
   }
   
+  // Adicionando um evento de teclado ao campo de entrada
+document.getElementById("message-input").addEventListener("keyup", function(event) {
+  // Verifica se a tecla pressionada é "Enter" (código 13)
+  if (event.keyCode === 13) {
+    // Chama a função sendMessage para enviar a mensagem
+    sendMessage();
+  }
+});
   
