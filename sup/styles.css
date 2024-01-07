@@ -55,6 +55,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    position: absolute;
+    bottom: 0;
 }
 
 input[type="text"] {
