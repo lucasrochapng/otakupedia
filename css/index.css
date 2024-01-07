@@ -11,6 +11,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #1f1f1f;
+  height: 100vh;
   
 }
 
@@ -26,13 +27,14 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  height: 100vh;
+  height: 90vh;
   background-image: linear-gradient( 180deg, rgba(0, 0, 0, 0.37), black, black);
 }
 
 #wallpaper {
   /* display: none; */
   width: 400px;
+  height: 100%;
   z-index: -1;
 }
 
