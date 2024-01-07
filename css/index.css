@@ -10,17 +10,9 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #1f1f1f;
+  background-color: black;
   height: 100vh;
-  
 }
-
-/* main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-} */
 
 main {
   display: flex;
@@ -28,13 +20,13 @@ main {
   align-items: center;
   gap: 5px;
   height: 90vh;
+  overflow: hidden;
   background-image: linear-gradient( 180deg, rgba(0, 0, 0, 0.37), black, black);
 }
 
 #wallpaper {
-  /* display: none; */
   width: 400px;
-  /* height: 100%; */
+  height: auto;
   z-index: -1;
 }
 
