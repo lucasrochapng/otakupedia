@@ -21,7 +21,6 @@ body {
     margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    /* position: relative; */
 }
 
 .header {
@@ -31,7 +30,6 @@ body {
     justify-content: space-between;
     margin-bottom: 15px;
     width: 100%;
-    /* height: 120px; */
     height: 8vh;
     box-shadow: 0 1px 15px 0 #242424;
     position: fixed;
@@ -49,7 +47,6 @@ body {
 }
 
 .box-input {
-    /* background-color: red; */
     width: 100%;
     height: 9vh;
     display: flex;
@@ -62,18 +59,13 @@ body {
 }
 
 input[type="text"] {
-    /* width: 83%; */
     width: 780px;
     max-width: 780px;
-    /* max-width: 83%; */
     height: 100px;
-    /* margin: 20px; */
     font-size: 50px;
     border-radius: 50px;
     background-color: #242424;
     color: white;
-    /* position: absolute; */
-    /* bottom: 0; */
     outline: none;
     border: 4px solid #333;
     padding-left: 40px;
@@ -81,7 +73,6 @@ input[type="text"] {
 
 input[type="text"]::placeholder{
     font-size: 50px;
-    /* padding-left: 40px; */
     color: grey;
 }
 
@@ -90,17 +81,12 @@ input[type="text"]:focus{
 }
   
 button {
-    /* background-color: green; */
     width: 100px;
     height: 100px;
-    /* position: absolute; */
-    /* bottom: 0; */
     right: 0;
     background-color: transparent;
     border-radius: 50px;
-    /* margin: 20px; */
     border: none;
-    /* margin-bottom: 25px; */
 }
 
 i {
@@ -138,7 +124,7 @@ i {
     color: #333;
     padding: 8px 12px;
     border-radius: 15px;
-    display: inline-block; /* Mantém as mensagens uma abaixo da outra */
+    display: inline-block;
     margin-bottom: 5px;
     max-width: 70%;
     clear: both;
@@ -147,8 +133,6 @@ i {
   .message-time {
     font-size: 25px;
     color: rgba(255, 255, 255, 0.699);
-    /* display: block; */
-    /* margin-top: 5px; */
     position: absolute;
     bottom: 20px;
     right: 30px;
