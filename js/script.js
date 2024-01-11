@@ -595,40 +595,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //! notificação ------------------------------------------
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Seleciona a notificação e o botão
-  const notificacao = document.querySelector('.notificacao');
-  const exibirNotificacaoBtn = document.getElementById('exibirNotificacaoBtn');
 
-  // Adiciona um ouvinte de eventos para o clique no botão
-  exibirNotificacaoBtn.addEventListener('click', function () {
-      // Adiciona a classe notificacao-ativa à notificação
-      notificacao.classList.add('notificacao-ativa');
-  });
 
-  // Adiciona um ouvinte de eventos para o botão "Não"
-  const botaoNao = document.getElementById('button-nao');
-  botaoNao.addEventListener('click', function (event) {
-      // Impede a propagação do evento para a notificação e o documento
-      event.stopPropagation();
-      // Remove a classe notificacao-ativa da notificação
-      notificacao.classList.remove('notificacao-ativa');
-  });
 
-  // Adiciona um ouvinte de eventos para o botão "Contate-nos"
-  const botaoContate = document.getElementById('button-contate');
-  botaoContate.addEventListener('click', function (event) {
-      // Impede a propagação do evento para a notificação e o documento
-      event.stopPropagation();
-      // Redireciona para o arquivo HTML de contato
-      window.location.href = 'caminho/para/arquivo-de-contato.html';
-  });
-
-  // Adiciona um ouvinte de eventos para fechar a notificação se clicar fora dela
-  document.addEventListener('click', function (event) {
-      if (!notificacao.contains(event.target) && event.target !== exibirNotificacaoBtn) {
-          // Remove a classe notificacao-ativa da notificação
-          notificacao.classList.remove('notificacao-ativa');
-      }
-  });
-});

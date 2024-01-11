@@ -337,11 +337,12 @@ main {
 /*! notificação ------------------ */
 
 .notificacao {
-  display: none;
+  /* display: block; */
   position: fixed;
   top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 25px;
+  /* left: 50%;
+  transform: translateX(-50%); */
   background-color: #202020;
   z-index: 9999;
   border-radius: 5px;

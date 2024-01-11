@@ -68,6 +68,16 @@
         }
     </style>
 
+    <style>
+        .notificacao {
+            display: none;
+            transform: translateY(-150%);
+            opacity: 0;
+            /* transition: transform 0.9s ease-in-out;  */
+            transition: transform 0.9s ease-in-out, opacity 0.9s ease-in-out;
+        }
+    </style>
+
 </head>
 
 <body id="body-index">
@@ -125,8 +135,6 @@
 
     </header>
 
-    <button id="exibirNotificacaoBtn">Exibir Notificação</button>
-
     <div class="notificacao">
 
         <div class="personalizar-notificacao">
@@ -134,8 +142,8 @@
             <div class="conteudo-notificacao">
                 <p>Olá, Otaku! ツ <br> Possui alguma dúvida?</p>
                 <div class="botoes-notificacao">
-                    <button onclick="fecharNotificacao()" id="button-nao">Não</button>
-                    <button onclick="abrirContato()" id="button-contate">Contate-nos</button>
+                    <button id="button-nao">Não</button>
+                    <button id="button-contate">Contate-nos</button>
                 </div>
             </div>
         </div>
@@ -146,75 +154,9 @@
 
         <img id="wallpaper" src="./img/wallpaper-index.jpg" alt="imagem-wallpaper">
 
-        <!-- <h2 id="top">Top Animes</h2>
-
-        <div class="card-rank">
-            <div class="card-rank-img">
-                <img src="./img/rank-naruto.jpg" alt="top1">
-            </div>
-            <div class="card-rank-text" id="naruto">
-                <h2>Naruto</h2>
-                <p>702 episódios</p>
-            </div>
-            <div class="card-rank-position" id="rank-position1">
-                <h2 class="rank"><small>#</small>1</h2>
-            </div>
-        </div>
-
-        <div class="card-rank">
-            <div class="card-rank-img">
-                <img src="./img/rank-jujutsu.jpg" alt="top2">
-            </div>
-            <div class="card-rank-text" id="jujutsu">
-                <h2>Jujutsu</h2>
-                <p>47 episódios</p>
-            </div>
-            <div class="card-rank-position">
-                <h2 class="rank"><small>#</small>2</h2>
-            </div>
-        </div>
-
-        <div class="card-rank">
-            <div class="card-rank-img">
-                <img src="./img/rank-bleach.jpg" alt="top3">
-            </div>
-            <div class="card-rank-text" id="bleach">
-                <h2>Bleach</h2>
-                <p>392 episódios</p>
-            </div>
-            <div class="card-rank-position">
-                <h2 class="rank"><small>#</small>3</h2>
-            </div>
-        </div> -->
-
-        
-
-        <!-- <div id="notification">
-
-            <div class="personalizar-notificacao">
-                <img src="./img/gojo-duvida.png" alt="imagem">
-                <div class="conteudo-notificacao">
-                    <p>Olá, Otaku! ツ <br> Possui alguma dúvida?</p>
-                    <div class="botoes-notificacao">
-                        <button onclick="fecharNotificacao()" id="button-nao">Não</button>
-                        <button onclick="abrirContato()" id="button-contate">Contate-nos</button>
-                    </div>
-                </div>
-            </div>
-
-        </div> -->
-
-
-
         <a class="suporte" href="./sup/index.html">
             <i class='bx bx-support'></i>
         </a>
-
-
-
-
-
-
 
     </main>
 
@@ -236,6 +178,39 @@
           // Mostra a div de erro
           document.querySelector('.error-message').style.display = 'flex';
         }
+    </script>
+
+    <script>
+        // Inicia com a div oculta
+        var divNotificacao = document.querySelector(".notificacao");
+        divNotificacao.style.display = "none";
+
+        // Após 5 segundos, muda para display block
+        setTimeout(function() {
+            divNotificacao.style.display = "block";
+            // divNotificacao.style.transform = "translateY(0)";
+            // divNotificacao.style.opacity = 1;
+            setTimeout(function() {
+                divNotificacao.style.transform = "translateY(0)";
+                divNotificacao.style.opacity = 1;
+            }, 900);
+        }, 5000);
+
+        document.getElementById("button-nao").addEventListener("click", function() {
+            // Sobe a notificação e depois oculta
+            divNotificacao.style.transform = "translateY(-150%)";
+            divNotificacao.style.opacity = 0;
+            setTimeout(function() {
+                // divNotificacao.style.opacity = 0;
+                divNotificacao.style.display = "none";
+                
+            }, 900); // Adiciona um pequeno atraso antes de ocultar completamente
+        });
+
+        document.getElementById("button-contate").addEventListener("click", function() {
+            // Redireciona para a outra página HTML
+            window.location.href = "./sup/index.html";
+        });
     </script>
 
     
