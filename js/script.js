@@ -591,3 +591,33 @@ document.addEventListener('DOMContentLoaded', function() {
   linhaSelecionada.style.width = `${initialWidth}px`;
   linhaSelecionada.style.left = `${initialLeft}px`;
 });
+
+
+//! notificação ------------------------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Função para exibir a notificação
+  function exibirNotificacao() {
+    const notification = document.getElementById('notification');
+    notification.style.display = 'block';
+
+    // Adicionado código para exibir os elementos internos
+    const conteudoNotificacao = document.querySelector('.personalizar-notificacao');
+    conteudoNotificacao.style.display = 'flex';
+  }
+
+  // Função para fechar a notificação
+  function fecharNotificacao() {
+      const notification = document.getElementById('notification');
+      notification.style.display = 'none';
+  }
+
+  // Função para abrir o arquivo de contato
+  function abrirContato() {
+      // Redirecionar para o arquivo HTML de contato
+      window.location.href = 'caminho/para/arquivo-de-contato.html';
+  }
+
+  // Exibir a notificação assim que o DOM for completamente carregado
+  exibirNotificacao();
+});

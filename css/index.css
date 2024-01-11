@@ -332,3 +332,72 @@ main {
   font-size: 30px;
   color: white;
 }
+
+
+/*! notificação ------------------ */
+
+#notification {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #202020;
+  z-index: 9999;
+  border-radius: 5px;
+}
+
+.personalizar-notificacao {
+  display: flex;
+  flex-direction: row;
+  width: 350px;
+  /* height: 130px; */
+}
+
+#notification img {
+  width: 130px;
+  height: auto;
+  padding: 15px 15px 0 15px;
+}
+
+.conteudo-notificacao {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+  justify-content: space-between;
+
+  padding: 15px 15px 15px 0;
+  /* width: 200px; */
+}
+
+.conteudo-notificacao p {
+  color: white;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.botoes-notificacao {
+  display: flex;
+  gap: 9px;
+}
+
+.botoes-notificacao button {
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+#button-nao {
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+#button-contate {
+  color: rgb(32, 136, 255);
+  background-color: transparent;
+  border: 2px solid rgb(32, 136, 255);
+}
