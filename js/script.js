@@ -593,8 +593,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-//! notificação ------------------------------------------
-
 
 
 

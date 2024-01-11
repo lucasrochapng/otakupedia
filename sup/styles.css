@@ -113,7 +113,8 @@ i {
     border-radius: 50px;
     margin-bottom: -30px;
     margin-right: 30px;
-    max-width: 80%;
+    max-width: 650px;
+    /* max-width: 80%; */
     min-height: 70px;
     max-height: auto;
     overflow-wrap: break-word;
@@ -131,14 +132,32 @@ i {
   
   /* Mensagem recebida (não implementado no exemplo original) */
   .received-message {
-    background-color: #C7D8ED;
+    /* background-color: #C7D8ED;
     color: #333;
     padding: 8px 12px;
     border-radius: 15px;
     display: inline-block;
     margin-bottom: 5px;
     max-width: 70%;
+    clear: both; */
+    color: #ffffff;
+    background-color: rgb(133, 133, 133);
+    padding: 15px 120px 15px 40px;
+    border-radius: 50px;
+    margin-bottom: -30px;
+    margin-right: 30px;
+    max-width: 650px;
+    /* max-width: 80%; */
+    min-height: 70px;
+    max-height: auto;
+    overflow-wrap: break-word;
     clear: both;
+    float: left;
+    position: relative;
+    font-size: 45px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
   }
   
   .message-time {
