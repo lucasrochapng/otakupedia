@@ -596,28 +596,39 @@ document.addEventListener('DOMContentLoaded', function() {
 //! notificação ------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Função para exibir a notificação
-  function exibirNotificacao() {
-    const notification = document.getElementById('notification');
-    notification.style.display = 'block';
+  // Seleciona a notificação e o botão
+  const notificacao = document.querySelector('.notificacao');
+  const exibirNotificacaoBtn = document.getElementById('exibirNotificacaoBtn');
 
-    // Adicionado código para exibir os elementos internos
-    const conteudoNotificacao = document.querySelector('.personalizar-notificacao');
-    conteudoNotificacao.style.display = 'flex';
-  }
+  // Adiciona um ouvinte de eventos para o clique no botão
+  exibirNotificacaoBtn.addEventListener('click', function () {
+      // Adiciona a classe notificacao-ativa à notificação
+      notificacao.classList.add('notificacao-ativa');
+  });
 
-  // Função para fechar a notificação
-  function fecharNotificacao() {
-      const notification = document.getElementById('notification');
-      notification.style.display = 'none';
-  }
+  // Adiciona um ouvinte de eventos para o botão "Não"
+  const botaoNao = document.getElementById('button-nao');
+  botaoNao.addEventListener('click', function (event) {
+      // Impede a propagação do evento para a notificação e o documento
+      event.stopPropagation();
+      // Remove a classe notificacao-ativa da notificação
+      notificacao.classList.remove('notificacao-ativa');
+  });
 
-  // Função para abrir o arquivo de contato
-  function abrirContato() {
-      // Redirecionar para o arquivo HTML de contato
+  // Adiciona um ouvinte de eventos para o botão "Contate-nos"
+  const botaoContate = document.getElementById('button-contate');
+  botaoContate.addEventListener('click', function (event) {
+      // Impede a propagação do evento para a notificação e o documento
+      event.stopPropagation();
+      // Redireciona para o arquivo HTML de contato
       window.location.href = 'caminho/para/arquivo-de-contato.html';
-  }
+  });
 
-  // Exibir a notificação assim que o DOM for completamente carregado
-  exibirNotificacao();
+  // Adiciona um ouvinte de eventos para fechar a notificação se clicar fora dela
+  document.addEventListener('click', function (event) {
+      if (!notificacao.contains(event.target) && event.target !== exibirNotificacaoBtn) {
+          // Remove a classe notificacao-ativa da notificação
+          notificacao.classList.remove('notificacao-ativa');
+      }
+  });
 });

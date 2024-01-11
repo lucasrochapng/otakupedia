@@ -336,7 +336,7 @@ main {
 
 /*! notificação ------------------ */
 
-#notification {
+.notificacao {
   display: none;
   position: fixed;
   top: 20px;
@@ -347,6 +347,10 @@ main {
   border-radius: 5px;
 }
 
+.notificacao-ativa {
+  display: block;
+}
+
 .personalizar-notificacao {
   display: flex;
   flex-direction: row;
@@ -354,7 +358,7 @@ main {
   /* height: 130px; */
 }
 
-#notification img {
+.notificacao img {
   width: 130px;
   height: auto;
   padding: 15px 15px 0 15px;
